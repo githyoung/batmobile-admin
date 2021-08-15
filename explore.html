@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-Han">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>深入分析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/layout_nosidebar.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="assets/apps/css/dynamicAdd.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="favicon.ico" /> 
+         <style>
+
+           .nav .open>a:hover{
+                background-color: #000;
+
+           }
+           .nav .open>a{
+                background-color: #000;
+
+           }
+             .nav>li>a:hover {
+                text-decoration: none;
+                background-color: #000;
+            }
+         </style>
+        </head>
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="index.html">
+                         <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                         </a> 
+                </div>
+
+                <div class="top-menu pull-left">
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="classic-menu-dropdown">
+                            <a href="index.html" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 總覽
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="dashboard.html">共用總覽頁</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> DMP服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="metricsall.html">受眾分析(整合分析)</a>
+                                </li>
+                                <li>
+                                    <a href="metrics.html">線上分析</a>
+                                </li>
+                                <li>
+                                    <a href="metricstag.html">線下分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 廣告服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="admanage.html">廣告管理</a>
+                                </li>
+                                <li>
+                                    <a href="adcreate.html">建立廣告</a>
+                                </li>
+                                <li>
+                                    <a href="addashboard.html">廣告成效</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 深入分析
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="explore.html">所有圖表</a>
+                                </li>
+                                <li>
+                                    <a href="chartsedit.html">建立新表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 帳號管理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="profile.html">基本設定</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Log</a>
+                                </li>
+                                <li>
+                                    <a href="administrator.html">權限管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 5 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">5 則</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">今天早上10:00</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> 會員成長超過150%. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3分鐘前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> 新的使用者登入. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">1小時間前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> 匯出會員標籤報告. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小時前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> 新的信件. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                       
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.png" />
+                                <span class="username username-hide-on-mobile"> BatUser </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> 設定 </a>
+                                </li>
+                               
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> 登出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container" style="background-color: #c8c8c8;">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">深入分析</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>所有圖表</span>
+                            </li>
+                        </ul>
+                        <!-- <div class="page-toolbar">
+                            <div id="dashboard-report-range" class="pull-right tooltips btn btn-fit-height grey-salsa" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
+                                <i class="icon-calendar"></i>&nbsp;
+                                <span class="thin uppercase hidden-xs"></span>&nbsp;
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div> -->
+                    </div>
+                   
+                    <div class="clearfix"></div>
+                    <div class="row">
+                     <div class="col-md-4">
+                            <div class="portlet light">
+                                <div class="portlet-title">
+                                    <div class="actions">
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-pencil"></i> 編輯 </a>
+                                            <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-plus"></i> 加到總覽 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-download"></i> 匯出 </a>
+                                    </div>
+                                
+                                    <div class="caption">
+                                        <span class="caption-subject bold uppercase" style="font-size: 20px;">七日銷售額</span>
+                                        <span class="caption-helper">(2017/09/01~09/08)</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div id="app1" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-4">
+                            <div class="portlet light">
+                                <div class="portlet-title">
+                                
+                                     <div class="actions">
+                                      <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-pencil"></i> 編輯 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-plus"></i> 加到總覽 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-download"></i> 匯出 </a>
+                                          
+                                        
+                                    </div>
+                                     <div class="caption">
+                                        <span class="caption-subject bold uppercase" style="font-size: 16px;">Top5商品細項銷售額</span>
+                                        <span class="caption-helper">(2017/09/01~09/08)</span>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div id="circle1" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="portlet light">
+                                <div class="portlet-title">
+                               
+                                     <div class="actions">
+                                      <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-pencil"></i> 編輯 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-plus"></i> 加到總覽 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-download"></i> 匯出 </a>
+                                            
+                                        
+                                    </div>
+                                   <div class="caption">
+                                        <span class="caption-subject bold uppercase" style="font-size: 16px;">Top6商品類型銷售額</span>
+                                        <span class="caption-helper">(2017/09/01~09/08)</span>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div id="bar1" style="height:301px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="portlet light">
+                                <div class="portlet-title"> 
+                                
+                                     <div class="actions">
+                                      <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-pencil"></i> 編輯 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-plus"></i> 加到總覽 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-download"></i> 匯出 </a>
+                                            
+                                        
+                                    </div>
+                                    <div class="caption">
+                                        <span class="caption-subject bold uppercase" style="font-size: 16px;">銷售收支</span>
+                                        <span class="caption-helper">(2017/09/01~09/08)</span>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div id="app3" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-md-4">
+                            <div class="portlet light">
+                                <div class="portlet-title"> 
+                                <div class="actions pull-left"><a href="javascript:;" class="btn btn-circle btn-default">
+                                           <i class="fa fa-times"></i> 刪除 </a>
+                                </div>
+                                
+                                     <div class="actions">
+                                      <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-pencil"></i> 編輯 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-plus"></i> 加到總覽 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-download"></i> 匯出 </a>
+                                            
+                                        
+                                    </div>
+                                    <div class="caption">
+                                        <span class="caption-subject bold uppercase" style="font-size: 16px;">xxx</span>
+                                        <span class="caption-helper">(2017/09/01~09/08)</span>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div id="app4" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="portlet light" style="background-color: #E4E4E4;border: 2px dashed #d5d5d5;">
+                                
+                                <div class="portlet-body">
+                                    <div id="" style="height:390px;margin-top: 10px;text-align: center;font-size: 50px;line-height: 360px;">+</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                
+                  
+                </div>
+            </div>
+            
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; BatMobile DMP SYSTEM.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script> 
+        <![endif]-->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+       
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        
+        <!-- echarts -->
+        <script src="assets/apps/scripts/echarts.min.js" type="text/javascript"></script>
+        <script src="assets/apps/scripts/infographic.js" type="text/javascript"></script>
+     <script>
+            var myChart = echarts.init(document.getElementById('app1'),'infographic');
+            option = {
+            title: {
+                text: '10,990元',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '20',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['銷售額'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['週一', '週二', '週三', '週四', '週五', '週六', '週日']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: [{
+                    name: '銷售額',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+        //             var myChart = echarts.init(document.getElementById('app2'),'infographic');
+        //             option = {
+        //     title: {
+        //         text: '5,000',
+        //         textStyle: {
+        //             color: '#000',
+        //             fontSize: '38',
+        //             fontWeight:'bolder'
+                    
+        //         }
+        //     },
+        //     tooltip: {
+        //         trigger: 'axis',
+
+        //         axisPointer: { // 坐标轴指示器，坐标轴触发有效
+        //             type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        //         },
+
+        //     },
+        //     legend: {
+        //         data: ['APP', 'WEB'],
+        //         x:'right'
+        //     },
+        //     xAxis: [{
+        //         type: 'category',
+        //         data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+        //     }],
+        //     yAxis: [{
+        //         type: 'value',
+        //         min: 0,
+        //         max: 250,
+        //         interval: 50,
+        //         axisLabel: {
+        //             formatter: '{value}K'
+        //         }
+        //     }],
+        //     series: [{
+        //             name: 'APP',
+        //             type:'line',
+        //             data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+        //             label: {
+        //                 normal: {
+        //                     show: true,
+        //                     position: 'inside'
+        //                 }
+        //             },
+        //         }, {
+        //             name: 'WEB',
+        //             type:'line',
+        //             data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+        //             label: {
+        //                 normal: {
+        //                     show: true,
+        //                     position: 'inside'
+        //                 }
+        //             },
+        //         }
+
+        //     ]
+        // };
+        // if (option && typeof option === "object") {
+        //     myChart.setOption(option, true);
+        // }
+        //             myChart.setOption(option);
+
+        //             var myChart = echarts.init(document.getElementById('app3'),'infographic');
+        //             option = {
+        //     title: {
+        //         text: '1,000',
+        //         textStyle: {
+        //             color: '#000',
+        //             fontSize: '38',
+        //             fontWeight:'bolder'
+                    
+        //         }
+        //     },
+        //     tooltip: {
+        //         trigger: 'axis',
+
+        //         axisPointer: { // 坐标轴指示器，坐标轴触发有效
+        //             type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+        //         },
+
+        //     },
+        //     legend: {
+        //         data: ['APP', 'WEB'],
+        //         x:'right'
+        //     },
+        //     xAxis: [{
+        //         type: 'category',
+        //         data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+        //     }],
+        //     yAxis: [{
+        //         type: 'value',
+        //         min: 0,
+        //         max: 250,
+        //         interval: 50,
+        //         axisLabel: {
+        //             formatter: '{value}K'
+        //         }
+        //     }],
+        //     series: [{
+        //             name: 'APP',
+        //             type:'line',
+        //             data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+        //             label: {
+        //                 normal: {
+        //                     show: true,
+        //                     position: 'inside'
+        //                 }
+        //             },
+        //         }, {
+        //             name: 'WEB',
+        //             type:'line',
+        //             data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+        //             label: {
+        //                 normal: {
+        //                     show: true,
+        //                     position: 'inside'
+        //                 }
+        //             },
+        //         }
+
+        //     ]
+        // };
+        // if (option && typeof option === "object") {
+        //     myChart.setOption(option, true);
+        // }
+                    myChart.setOption(option);
+
+
+
+         // ---------------------   圓餅圖  --------------- 
+
+                          var PieEcharts = [
+                                                {value:335, name:'卡其褲'},
+                                                {value:310, name:'牛仔褲'},
+                                                {value:234, name:'皮外套'},
+                                                {value:135, name:'經典款T恤'},
+                                                {value:1548, name:'直筒褲'}
+                                            ]
+                            var PieEchartsLegend = [];
+
+                            for(var i = 0 ; i < PieEcharts.length; i++){
+                                                PieEchartsLegend.push(PieEcharts[i].name);
+                                            }
+                    var myChart = echarts.init(document.getElementById('circle1'),'infographic');
+
+                                option = {
+                                    tooltip : {
+                                        trigger: 'item',
+                                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                    },
+                                    legend: {
+                                        orient: 'vertical',
+                                        left: 'left',
+                                        data: PieEchartsLegend
+                                    },
+                                    series : [
+                                        {
+                                            name: '访问来源',
+                                            type: 'pie',
+                                            radius : '55%',
+                                            center: ['50%', '60%'],
+                                            itemStyle: {
+                                                emphasis: {
+                                                    shadowBlur: 10,
+                                                    shadowOffsetX: 0,
+                                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                                }
+                                            },
+                                            data:PieEcharts
+                                        }
+                                    ]
+                                };
+                                myChart.setOption(option);
+
+
+                      var myChart = echarts.init(document.getElementById('bar1'),'infographic');
+                       var option = {
+                        title: {
+                            text: ''
+                        },
+                        tooltip: {},
+                         toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow',
+                label: {
+                    show: true
+                }
+            }
+        },
+                        legend: {
+                            data:['销量']
+                        },
+                        xAxis: {
+                            data: ["上衣","褲子","外套","鞋子","皮帶","毛巾"]
+                        },
+                        yAxis: {},
+                        series: [{
+                            name: '销量',
+                            type: 'bar',
+                            data: [5, 20, 36, 10, 10, 20]
+                        }]
+                    };
+
+                    myChart.setOption(option);
+
+    var myChart = echarts.init(document.getElementById('app3'),'infographic');
+
+
+option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data:['利润', '支出', '收入']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    yAxis : [
+        {
+            type : 'category',
+            axisTick : {show: false},
+            data : ['周一','周二','周三','周四','周五','周六','周日',]
+        }
+    ],
+    series : [
+        {
+            name:'利润',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'inside'
+                }
+            },
+            data:[200, 170, 240, 244, 200, 220, 210]
+        },
+        {
+            name:'收入',
+            type:'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true
+                }
+            },
+            data:[320, 302, 341, 374, 390, 450, 420]
+        },
+        {
+            name:'支出',
+            type:'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'left'
+                }
+            },
+            data:[-120, -132, -101, -134, -190, -230, -210]
+        }
+    ]
+};
+
+                    myChart.setOption(option);
+
+
+        </script>
+    </body>
+
+</html>

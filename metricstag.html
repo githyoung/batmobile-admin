@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-Han">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>標籤分析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
+
+        <link href="assets/apps/css/dynamicAdd.css" rel="stylesheet" />
+        <link href="assets/apps/css/core.css" rel="stylesheet">
+
+        <link href="assets/apps/css/fixedColumns.dataTables.min.css">
+        <link href="assets/apps/css/buttons.dataTables.min.css" rel="stylesheet">
+        <link href="assets/apps/css/jquery.dataTables.css" rel="stylesheet" >
+        <link href="assets/apps/css/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/apps/css/app.css" rel="stylesheet" >
+        <link href="assets/apps/css/ion.rangeSlider.css" rel="stylesheet"/>
+        <link href="assets/apps/css/ion.rangeSlider.skinFlat.css" rel="stylesheet"/>
+
+        <link rel="shortcut icon" href="favicon.ico" />
+        <style>
+
+        .nav .open>a:hover{background-color: #000;}
+        .nav .open>a{background-color: #000;}
+        .nav>li>a:hover {text-decoration: none;background-color: #000;}
+        .page-content-wrapper .page-content{margin-left:0px;}
+        th, td { white-space: nowrap; }
+        div.dataTables_wrapper {width:auto;margin: 0 auto;}
+        div.ColVis {float: left;}
+        .bootstrap-tagsinput ul.dropdown-menu{min-width: 80px!important;}
+        .dataTables_processing{z-index: 99999;}
+        .cardbox{   
+                padding: 15px;
+                border: 1px solid #e3e8ed;
+                background-clip: padding-box;
+                margin-bottom: 20px;
+                background-color: #ffffff;
+            }
+         </style>
+    </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                    </a> 
+                </div>
+               <div class="top-menu pull-left">
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="classic-menu-dropdown">
+                            <a href="index.html" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;line-height: 50px;"> 總覽
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="dashboard.html">共用總覽頁</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;line-height: 50px;"> DMP服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="metricsall.html">受眾分析(整合分析)</a>
+                                </li>
+                                <li>
+                                    <a href="metrics.html">線上分析</a>
+                                </li>
+                                <li>
+                                    <a href="metricstag.html">線下分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;line-height: 50px;"> 廣告服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="admanage.html">廣告管理</a>
+                                </li>
+                                <li>
+                                    <a href="adcreate.html">建立廣告</a>
+                                </li>
+                                <li>
+                                    <a href="addashboard.html">廣告成效</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;line-height: 50px;"> 深入分析
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="explore.html">所有圖表</a>
+                                </li>
+                                <li>
+                                    <a href="chartsedit.html">建立新表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;line-height: 50px;"> 帳號管理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="profile.html">基本設定</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Log</a>
+                                </li>
+                                <li>
+                                    <a href="administrator.html">權限管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 5 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">5 則</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">今天早上10:00</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> 會員成長超過150%. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3分鐘前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> 新的使用者登入. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">1小時間前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> 匯出會員標籤報告. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小時前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> 新的信件. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. 
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                       
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.png" />
+                                <span class="username username-hide-on-mobile"> BatUser </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> 設定 </a>
+                                </li>
+                               
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> 登出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container" style="background-color: #c8c8c8;">
+            
+            <div class="page-content-wrapper">
+
+                <div class="page-content">
+                  
+                    <div class="clearfix"></div>
+
+
+                    <!-- END DASHBOARD STATS 1-->
+                    <div class="row" style="margin-bottom: 15px;">
+                        <div class="col-sm-12">
+                            <div class="page-bar">
+                                 <ul class="page-breadcrumb">
+                                    <li>
+                                        <a href="index.html">DMP服務</a>
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <span>標籤分析</span>
+                                        <i class="fa fa-angle-right"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>會員報告</span>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                 <!--    <div class="row">
+                         <div class="col-md-12">
+                             <div class="portlet light">
+                                <div class="portlet-title">
+                                    <div class="actions">
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-pencil"></i> 隱藏 </a>
+                                        <a href="javascript:;" class="btn btn-circle btn-default">
+                                            <i class="fa fa-plus"></i> 匯出 </a>
+                                        
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                        <div id="app1" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div> -->
+
+
+                    <div class="row">
+              <div class="col-lg-9">
+                <div class="cardbox">
+                   <ul class="nav nav-tabs" style="width: 100%;margin-bottom: 40px;text-align: center;">
+                        <li class="tab active" style="width: 20%;">
+                            <a href="sysmember.html"  class="active"> 
+                                <span class="visible-xs"><i class="fa fa-home"></i></span> 
+                                <span class="hidden-xs">會員管理</span> 
+                            </a> 
+                        </li> 
+                        <li class="tab" style="width: 20%;"> 
+                            <a href="sysitems.html" class=""> 
+                                <span class="visible-xs"><i class="fa fa-user"></i></span> 
+                                <span class="hidden-xs">商品管理</span> 
+                            </a> 
+                        </li> 
+                        <li class="tab" style="width: 20%;"> 
+                            <a href="sysshop.html"  class=""> 
+                                <span class="visible-xs"><i class="fa fa-envelope-o"></i></span> 
+                                <span class="hidden-xs">店點管理</span> 
+                            </a> 
+                        </li>
+                         <li class="tab" style="width: 20%;"> 
+                            <a href="sysactive.html"  class=""> 
+                                <span class="visible-xs"><i class="fa fa-envelope-o"></i></span> 
+                                <span class="hidden-xs">活動管理</span> 
+                            </a> 
+                        </li> 
+                         <li class="tab" style="width: 20%;"> 
+                            <a href="sysfavorite.html"  class=""> 
+                                <span class="visible-xs"><i class="fa fa-envelope-o"></i></span> 
+                                <span class="hidden-xs">我的最愛</span> 
+                            </a> 
+                        </li> 
+                    <div class="indicator" style="right: 400px; left: 0px;"></div></ul>
+                  <table id="example" class="stripe row-border order-column" cellspacing="0" width="100%">
+                  <div id="listtag">
+                  <span class="label label-danger">篩選標籤</span>
+                    <span id="addfilter"></span>
+                  </div>
+                  <thead>
+                      <tr>
+                          <th>會員代號</th>
+                          <th>姓名</th>
+                          <th>手機</th>
+                          <th>Email</th>
+                          <th>標籤</th>
+                          <th>Device ID</th>
+                          <th>FB ID</th>
+                          <th>Google ID</th>
+                          <th>地址</th>
+                          <th>VIP等級</th>
+                          <th>性別</th>
+                          <th>生日</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>AA</td>
+                          <td>Kevin</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                             <td class="test1">
+                              <span class="tag-green">周年慶</span>
+                              <span class="tag-green">sogo</span>
+                              <span class="tag-green">運動</span>
+                              <span class="tag-blue">20歲</span>
+                              <span class="tag-pink">購物</span>
+                              <span class="tag-pink">白金卡</span>
+                              <span class="tag-pink">白金卡</span>
+                              <span class="tag-pink">白金卡</span>
+                              <span class="tag-pink">白金卡</span>
+                              <span class="tag-pink">白金卡</span>
+                              <span class="tag-pink">白金卡</span>
+                            
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>女</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                    <tr>
+                          <td>BB</td>
+                          <td>Uino</td>
+                          <td>5421</td>
+                          <td>ddd@ss.net</td>
+                             <td class="test1">
+                              <span class="tag-blue">運動</span>
+                              <span class="tag-yellow">週年</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-blue">gogo</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus2222</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市22號</td>
+                          <td>白金</td>
+                          <td>男</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                        <tr>
+                          <td>Ashton</td>
+                          <td>Cox</td>
+                          <td>1111</td>
+                          <td>test@test.mail</td>
+                           <td class="test1">
+                              <span class="tag-pink">運動</span>
+                              <span class="tag-pink">週年</span>
+                              <span class="tag-yellow">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>66</td>
+                          <td>66</td>
+                          <td>go212323</td>
+                          <td>台中市200號</td>
+                          <td>金</td>
+                          <td>女</td>
+                          <td>2012/01/25</td>
+                      </tr>
+                      <tr>
+                          <td>Nore</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">週年</span>
+                              <span class="tag-blue">sogo</span>
+                              <span class="tag-blue">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>女</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                      <tr>
+                          <td>Wen</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-pink">運動</span>
+                              <span class="tag-blue">週年</span>
+                              <span class="tag-yellow">sogo</span>
+                              <span class="tag-green">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台南市100號</td>
+                          <td>金</td>
+                          <td>男</td>
+                          <td>2013/04/25</td>
+                      </tr>
+                      <tr>
+                          <td>Kevin</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-blue">運動</span>
+                              <span class="tag-green">週年</span>
+                              <span class="tag-pink">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>女</td>
+                          <td>2010/12/25</td>
+                      </tr>
+                      <tr>
+                          <td>Tony</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-pink">運動</span>
+                              <span class="tag-pink">週年</span>
+                              <span class="tag-yellow">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-pink">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>男</td>
+                          <td>2001/08/25</td>
+                      </tr>
+                      <tr>
+                          <td>Tiger</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-green">運動</span>
+                              <span class="tag-blue">週年</span>
+                              <span class="tag-blue">sogo</span>
+                              <span class="tag-pink">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>高雄市100號</td>
+                          <td>金</td>
+                          <td>女</td>
+                          <td>2014/05/25</td>
+                      </tr>
+                      <tr>
+                          <td>Tiger</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-blue">運動</span>
+                              <span class="tag-blue">週年</span>
+                              <span class="tag-blue">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-pink">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-green">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>男</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                      <tr>
+                          <td>Tiger</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-pink">運動</span>
+                              <span class="tag-yellow">週年</span>
+                              <span class="tag-pink">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-green">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>男</td>
+                          <td>2015/04/25</td>
+                      </tr>
+                      <tr>
+                          <td>Mike</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">週年</span>
+                              <span class="tag-green">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-green">運動</span>
+                              <span class="tag-yellow">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123456</td>
+                          <td>go123456</td>
+                          <td>新竹100號</td>
+                          <td>白金</td>
+                          <td>男</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                      <tr>
+                          <td>Flower</td>
+                          <td>Nixon</td>
+                          <td>5421</td>
+                          <td>t.nixon@datatables.net</td>
+                          <td class="test1">
+                              <span class="tag-green">運動</span>
+                              <span class="tag-yellow">週年</span>
+                              <span class="tag-yellow">sogo</span>
+                              <span class="tag-yellow">20-30歲</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-yellow">運動</span>
+                              <span class="tag-green">運動</span>
+                          </td>
+                          <td>asus1111</td>
+                          <td>fb123356</td>
+                          <td>go123456</td>
+                          <td>台北市100號</td>
+                          <td>白金</td>
+                          <td>女</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+            </div>
+             <!-- 最右側內容開始 -->
+              <div class="col-lg-3">
+                  <ul class="nav nav-tabs navtab-bg nav-justified" style="border-left: 1px solid #e3e8ed;border-right: 1px solid #e3e8ed;border-top: 1px solid #e3e8ed;""> 
+                      <li class="active"> 
+                          <a href="#main" data-toggle="tab" aria-expanded="true"> 
+                              <span class="visible-xs"><i class="fa fa-home"></i></span> 
+                              <span class="hidden-xs">標籤</span> 
+                          </a> 
+                      </li> 
+                      <li class=""> 
+                          <a href="#advance" data-toggle="tab" aria-expanded="false"> 
+                              <span class="visible-xs"><i class="fa fa-user"></i></span> 
+                              <span class="hidden-xs">進階篩選</span> 
+                          </a> 
+                      </li> 
+                  </ul> 
+                  <div class="tab-content" style="border-left: 1px solid #e3e8ed;border-right: 1px solid #e3e8ed;padding: 5px;"> 
+                      <div class="tab-pane active" id="main"> 
+                          <div class="">
+                            <div class="p-20">
+                               <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#manof" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>性別</span></a>
+                                </div>
+                                <div id="manof" class="sysline collapse">
+                                        <ul>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="male" type="checkbox" name="sex">
+                                                  <label for="male">
+                                                      男
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="female" type="checkbox" name="sex">
+                                                  <label for="female">
+                                                      女
+                                                  </label>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                </div>
+                                <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#years" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>年齡</span></a>
+                                </div>
+                                    <div id="years" class="sysline collapse">
+                                              <input type="text" id="age">
+                                    </div>
+                                 <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#birthday" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>生日</span></a>
+                                </div>
+                                
+                                    <div id="birthday" class="sysline collapse">
+                                              <input type="text" id="birth">
+                                    </div>
+                                 <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#zodiac" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>星座</span></a>
+                                </div>
+                                
+                                <div id="zodiac" class="sysline collapse">
+                                      <ul>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star1" type="checkbox">
+                                                  <label for="star1">
+                                                      摩羯座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                           <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star2" type="checkbox">
+                                                  <label for="star2">
+                                                      水瓶座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star3" type="checkbox">
+                                                  <label for="star3">
+                                                      雙魚座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star4" type="checkbox">
+                                                  <label for="star4">
+                                                      牡羊座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star5" type="checkbox">
+                                                  <label for="star5">
+                                                      金牛座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star6" type="checkbox">
+                                                  <label for="star6">
+                                                      雙子座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star7" type="checkbox">
+                                                  <label for="star7">
+                                                      巨蟹座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star8" type="checkbox">
+                                                  <label for="star8">
+                                                      獅子座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star9" type="checkbox">
+                                                  <label for="star9">
+                                                      處女座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star10" type="checkbox">
+                                                  <label for="star10">
+                                                      天秤座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star11" type="checkbox">
+                                                  <label for="star11">
+                                                      天蠍座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="star12" type="checkbox">
+                                                  <label for="star12">
+                                                      射手座
+                                                  </label>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                </div>
+
+                                 <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#add" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>辦卡地址</span></a>
+                                </div>
+                                <div id="add" class="sysline collapse in">
+                                        <ul>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="add1" type="checkbox" name="address">
+                                                  <label for="add1">
+                                                      北區
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="add2" type="checkbox" name="address">
+                                                  <label for="add2">
+                                                      中區
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="add3" type="checkbox" name="address">
+                                                  <label for="add3">
+                                                      南區
+                                                  </label>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                </div>
+
+                                <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#avgshop" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>平均年購物頻率</span></a>
+                                </div>
+
+                                <div id="avgshop" class="sysline collapse">
+                                          <input type="text" id="buyfrequency">
+                                </div>
+
+
+                                 <!-- 平均單次消費金額 首次 Modal -->
+                            <div class="modal fade bs-example-modal-sm" id="server1_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                  輸入最大值<input type="text" class="form-control" name="maxdata">
+                                 <p></p>     
+                                   <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                </div>
+                                </div>
+                              </div>
+                            <!-- 平均單次消費金額 非首次 Modal -->
+                            <div class="modal fade bs-example-modal-sm" id="server2_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                  輸入最大值<input type="text" class="form-control" name="maxdata">
+                                 <p></p>     
+                                   <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                </div>
+                                </div>
+                              </div>
+                            <!-- 最近一年貢獻度 Modal -->
+                            <div class="modal fade bs-example-modal-sm" id="server3_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                  輸入最大值<input type="text" class="form-control" name="maxdata">
+                                 <p></p>     
+                                   <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                </div>
+                                </div>
+                              </div>
+
+                                
+                                 <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#demo1" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>平均單次消費金額</span></a>
+                                </div>
+                                <div id="demo1" class="sysline collapse in">
+                                     
+                                      <input type="text" id="buyone">
+
+                                       <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="moneyset">首次金額最大級距</button>
+
+                                      
+                                      <input type="text" id="nonbuyone">
+
+                                     
+                                      <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="nonmoneyset">非首次金額最大級距</button>
+                                </div>
+
+
+                                  <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#history" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>歷史購買月份</span></a>
+                                </div>
+                                  <div id="history" class="sysline collapse in">
+                                        <input type="text" value="2016/01,2016/02" data-role="tagsinput" id="tagtest"/>
+
+                                  </div>
+
+                                <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#oneyear" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>最近一年貢獻金額</span></a>
+                                </div>
+                                <div id="oneyear" class="sysline collapse">
+                                     
+                                      <input type="text" id="oneyearmoney">
+                                      
+                                      <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="maxyearmoney">設定金額最大級距</button>
+                                </div>
+
+                                 <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#activity" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>活躍度</span></a>
+                                </div>
+
+                                <div id="activity" class="sysline collapse">
+                                          <input type="text" id="peractive">
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                            <div class="tab-pane" id="advance"> 
+                              <div class="p-20">
+                                <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#add" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>卡片等級</span></a>
+                                </div>
+                                <div id="add" class="sysline collapse in">
+                                        <ul>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="good1" type="checkbox" name="address">
+                                                  <label for="good1">
+                                                      好友
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="good2" type="checkbox" name="address">
+                                                  <label for="good2">
+                                                      銀卡
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="good3" type="checkbox" name="address">
+                                                  <label for="good3">
+                                                      金卡
+                                                  </label>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                </div>
+                              <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#vipwork" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>VIP是否有效</span></a>
+                                </div>
+
+                                <div id="vipwork" class="sysline collapse in">
+                                    <input type="text" id="vipexpire">
+                                     <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="vipexpireset">設定過期最大月份</button>
+                                    
+                                    <input type="text" id="vipsave">
+                                     <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="vipsaveset">設定存續最大月份</button>
+                                   
+                                    <input type="text" id="vipstop">
+                                     <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="vipstopset">設定停卡最大月份</button>
+                                </div>
+                                <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#renewcard" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>續卡狀況</span></a>
+                                </div>
+                                <div id="renewcard" class="sysline collapse in">
+                                        <ul>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="renew1" type="checkbox" name="renew">
+                                                  <label for="renew1">
+                                                      首次辦卡
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li>
+                                               <div class="checkbox checkbox-warning">
+                                                  <input id="renew2" type="checkbox" name="renew">
+                                                  <label for="renew2">
+                                                      續卡
+                                                  </label>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                </div>
+
+                                <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#point" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>入會點數累積</span></a>
+                                </div>
+                                <div id="point" class="sysline collapse">
+                                     
+                                      <input type="text" id="pointaccumulate">
+                                      
+                                      <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="maxpoint">設定點數最大級距</button>
+                                </div>
+
+                                 <div class="sysright-heading"> 
+                                  <a data-toggle="collapse" data-target="#pointmoney" href="#collapseOne-2" class="collapsed"><image src="assets/apps/img/yellow_check.png" width="8" style="margin-right: 10px;"></image><span>入會金額累積</span></a>
+                                </div>
+                                <div id="pointmoney" class="sysline collapse">
+                                     
+                                      <input type="text" id="moneyaccumulate">
+                                      
+                                      <button class="btn btn-success waves-effect waves-light btn-sm m-t-10 m-b-10" id="maxpointmoney">設定金額最大級距</button>
+                                </div>
+                            <!--  Modal -->
+                              <div class="modal fade bs-example-modal-sm" id="vip1_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                  <div class="modal-content">
+                                    輸入最大月份<input type="text" class="form-control" name="maxdata" placeholder="ex:輸入6">
+                                   <p></p>     
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                  </div>
+                                  </div>
+                                </div>
+                              <div class="modal fade bs-example-modal-sm" id="vip2_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                  <div class="modal-content">
+                                    輸入最大月份<input type="text" class="form-control" name="maxdata" placeholder="ex:輸入6">
+                                   <p></p>     
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                  </div>
+                                  </div>
+                                </div>
+                              <div class="modal fade bs-example-modal-sm" id="vip3_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                  <div class="modal-content">
+                                    輸入最大月份<input type="text" class="form-control" name="maxdata" placeholder="ex:輸入6">
+                                   <p></p>     
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                  </div>
+                                  </div>
+                                </div>
+                                <div class="modal fade bs-example-modal-sm" id="point1_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                  <div class="modal-content">
+                                    輸入最大點數<input type="text" class="form-control" name="maxdata">
+                                   <p></p>     
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                  </div>
+                                  </div>
+                                </div>
+                                <div class="modal fade bs-example-modal-sm" id="pointmoney_msg_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                  <div class="modal-content">
+                                    輸入最大點數<input type="text" class="form-control" name="maxdata">
+                                   <p></p>     
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">確定</button>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> 
+                        
+                              <button type="button" class="btn waves-effect waves-light btn-default" style="margin-top: 20px;margin-bottom:10px;width:100%;"><i class="fa fa-search m-r-5"></i></button>
+
+                         </div> 
+                     </div>
+
+                  
+                
+                  
+                </div>
+            </div>
+            
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; BatMobile DMP SYSTEM.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script> 
+        <![endif]-->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+       
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        
+        <!-- echarts -->
+        <script src="assets/apps/scripts/echarts.min.js" type="text/javascript"></script>
+        <script src="assets/apps/scripts/infographic.js" type="text/javascript"></script>
+
+
+
+        <!-- <script src="assets/apps/scripts/jquery.min.js"></script> -->
+        
+        <script src="assets/apps/scripts/ion.rangeSlider.min.js"></script>
+        <!-- dataTables -->
+        <script src="assets/apps/scripts/jquery.dataTables.min.js"></script>
+        <script src="assets/apps/scripts/dataTables.fixedColumns.min.js
+        "></script>
+        <script src="assets/apps/scripts/dataTables.buttons.min.js"></script>
+        <script src="assets/apps/scripts/buttons.colVis.min.js"></script>
+        <script src="assets/apps/scripts/dataTables.bootstrap.min.js"></script>
+        <script src="assets/apps/scripts/bootstrap-tagsinput.min.js"></script>
+        <!-- <script src="assets/js/bootstrap3-typeahead.js"></script> -->
+        <script src="assets/apps/scripts/typeahead.bundle.min.js"></script>
+
+        
+
+       <!--  <script>
+            var myChart = echarts.init(document.getElementById('app1'),'infographic');
+            option = {
+            title: {
+                text: '10,990',
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '42',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['APP', 'WEB'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: [{
+                    name: 'APP',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }, {
+                    name: 'WEB',
+                    type:'line',
+                    data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+                    var myChart = echarts.init(document.getElementById('app2'),'infographic');
+                    option = {
+            title: {
+                text: '5,000',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '38',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['APP', 'WEB'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: [{
+                    name: 'APP',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }, {
+                    name: 'WEB',
+                    type:'line',
+                    data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+                    var myChart = echarts.init(document.getElementById('app3'),'infographic');
+                    option = {
+            title: {
+                text: '1,000',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '38',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['APP', 'WEB'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: [{
+                    name: 'APP',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }, {
+                    name: 'WEB',
+                    type:'line',
+                    data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+
+                var myChart = echarts.init(document.getElementById('app4'),'infographic');
+                    option = {
+            title: {
+                text: '1,000',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '38',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['APP', 'WEB'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: [{
+                    name: 'APP',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }, {
+                    name: 'WEB',
+                    type:'line',
+                    data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+
+        </script> -->
+
+        <!-- 右側Range slider setting -->
+    <!-- 單次購物金額 -->
+    <script>
+          $("#buyone").ionRangeSlider({
+                type: "double",
+                min: 0, //最小值
+                max: 10000,//最大值
+                step: 50,
+                to:1000,//初始最大值
+                prefix: "首次 $"
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#buyone");
+            var slider = $range.data("ionRangeSlider");
+
+            $("#moneyset").on('click',function(){
+
+               // Call sliders reset method
+                slider.reset();
+
+            // 管理者改變最大值設定
+                 var maxnumber = $("#buyone").data("ionRangeSlider");
+                 $('#server1_msg_modal').modal('show');
+                 $('#server1_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var todata = $(this).find('input').val();
+                 var todata = parseInt(todata);
+                 const maxdata = todata+10000;
+                      
+                      if(!isNaN(todata)){
+                          maxnumber.update({
+                                    to: todata,
+                                    max:maxdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+
+            });
+            // 非首次
+             $("#nonbuyone").ionRangeSlider({
+                type: "double",
+                min: 0, //最小值
+                max: 1,//最大值
+                step: 50,
+                to:1000,//初始最大值
+                prefix: "非首次 $"
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#nonbuyone");
+            var nonslider = $range.data("ionRangeSlider");
+
+            $("#nonmoneyset").on('click',function(){
+
+               // Call sliders reset method
+                nonslider.reset();
+
+            // 管理者改變最大值設定
+                 var nonmaxnumber = $("#nonbuyone").data("ionRangeSlider");
+                 $('#server2_msg_modal').modal('show');
+                 $('#server2_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var nondata = $(this).find('input').val();
+                 
+                 var nondata = parseInt(nondata);
+                 const nonmaxdata = nondata+10000;
+                      
+                      if(!isNaN(nondata)){
+                          nonmaxnumber.update({
+                                    to: nondata,
+                                    max:nonmaxdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+
+            });
+
+             // 平均一年貢獻
+             $("#oneyearmoney").ionRangeSlider({
+                type: "double",
+                min: 0, //最小值
+                max: 10000,//最大值
+                step: 50,
+                to:1000,//初始最大值
+                prefix: "$"
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#oneyearmoney");
+            var nonslider = $range.data("ionRangeSlider");
+
+            $("#maxyearmoney").on('click',function(){
+
+               // Call sliders reset method
+                nonslider.reset();
+
+            // 管理者改變最大值設定
+                 var oneyearmoney = $("#oneyearmoney").data("ionRangeSlider");
+                 $('#server3_msg_modal').modal('show');
+                 $('#server3_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var maxdata = $(this).find('input').val();
+                 var maxdata = parseInt(maxdata);
+                 const maxyeardata = maxdata+10000;
+                      
+                      if(!isNaN(maxdata)){
+                          oneyearmoney.update({
+                                    to: maxdata,
+                                    max:maxyeardata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+
+            });
+
+             // vip是否有效
+
+             $("#vipexpire").ionRangeSlider({
+                type: "double",
+                values: [
+                "1", "2", "3","4", "5", "6",
+                "7", "8", "9","10", "11", "12"
+                 ],
+                 postfix:"個月",
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#vipexpire");
+            var vipslider = $range.data("ionRangeSlider");
+
+            $("#vipexpireset").on('click',function(){
+
+               // Call sliders reset method
+                vipslider.reset();
+
+              // 管理者改變最大值設定
+                 var vipexpire = $("#vipexpire").data("ionRangeSlider");
+                 $('#vip1_msg_modal').modal('show');
+                 $('#vip1_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var maxdata = $(this).find('input').val();
+                 var maxdata = parseInt(maxdata);
+                 const maxvipdata = maxdata+1;
+                      if(!isNaN(maxdata)){
+                          vipexpire.update({
+
+                                    values: [
+                                    ],
+                                    to: maxdata,
+                                    max:maxvipdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+            });
+            $("#vipsave").ionRangeSlider({
+                type: "double",
+                 values: [
+                "1", "2", "3","4", "5", "6",
+                "7", "8", "9","10", "11", "12"
+                 ],
+                 postfix:"個月",
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#vipsave");
+            var vipslider = $range.data("ionRangeSlider");
+
+            $("#vipsaveset").on('click',function(){
+
+               // Call sliders reset method
+                vipslider.reset();
+
+            // 管理者改變最大值設定
+                 var vipsave = $("#vipsave").data("ionRangeSlider");
+                 $('#vip2_msg_modal').modal('show');
+                 $('#vip2_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var maxdata = $(this).find('input').val();
+                 var maxdata = parseInt(maxdata);
+                 const maxvipdata = maxdata+1;
+                      
+                      if(!isNaN(maxdata)){
+                          vipsave.update({
+                                    to: maxdata,
+                                    max:maxvipdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+            });
+            $("#vipstop").ionRangeSlider({
+                type: "double",
+                 values: [
+                "1", "2", "3","4", "5", "6",
+                "7", "8", "9","10", "11", "12"
+                 ],
+                 postfix:"個月",
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#vipstop");
+            var vipslider = $range.data("ionRangeSlider");
+
+            $("#vipstopset").on('click',function(){
+
+               // Call sliders reset method
+                vipslider.reset();
+
+            // 管理者改變最大值設定
+                 var vipstop = $("#vipstop").data("ionRangeSlider");
+                 $('#vip3_msg_modal').modal('show');
+                 $('#vip3_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var maxdata = $(this).find('input').val();
+                 var maxdata = parseInt(maxdata);
+                 const maxvipdata = maxdata+1;
+                      
+                      if(!isNaN(maxdata)){
+                          vipstop.update({
+                                    to: maxdata,
+                                    max:maxvipdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+            });
+            // 入會點數累積
+               $("#pointaccumulate").ionRangeSlider({
+                type: "double",
+                min: 0, //最小值
+                max: 10000,//最大值
+                step: 30,
+                to:1000,//初始最大值
+                postfix:"點",
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#pointaccumulate");
+            var vipslider = $range.data("ionRangeSlider");
+
+            $("#maxpoint").on('click',function(){
+
+               // Call sliders reset method
+                vipslider.reset();
+
+            // 管理者改變最大值設定
+                 var pointaccumulate = $("#pointaccumulate").data("ionRangeSlider");
+                 $('#point1_msg_modal').modal('show');
+                 $('#point1_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var maxdata = $(this).find('input').val();
+
+                 var maxdata = parseInt(maxdata);
+                 const maxvipdata = maxdata+1000;
+                      
+                      if(!isNaN(maxdata)){
+                          pointaccumulate.update({
+                                    to: maxdata,
+                                    max:maxvipdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+            });
+
+               // 入會金額累積
+               $("#moneyaccumulate").ionRangeSlider({
+                type: "double",
+                min: 0, //最小值
+                max: 10000,//最大值
+                step: 30,
+                to:1000,//初始最大值
+                postfix:"點",
+                //以下四個function可用
+                // onStart: function (data) {
+                    // console.log(data);
+                // },
+                // onChange:function (data) {
+                    // console.log(data);
+                // },
+                // onFinish:function (data) {
+                    // console.log(data);
+                    // alert("從"+data["from"]+"至"+data["to"]);
+                // },
+                // onUpdate:function (data) {
+                    // console.log(data);
+                // }
+            });
+
+            // Save slider instance to var
+            var $range = $("#moneyaccumulate");
+            var vipslider = $range.data("ionRangeSlider");
+
+            $("#maxpointmoney").on('click',function(){
+
+               // Call sliders reset method
+                vipslider.reset();
+
+            // 管理者改變最大值設定
+                 var moneyaccumulate = $("#moneyaccumulate").data("ionRangeSlider");
+                 $('#pointmoney_msg_modal').modal('show');
+                 $('#pointmoney_msg_modal').on('hidden.bs.modal', function () {
+                    
+                 var maxdata = $(this).find('input').val();
+                 var maxdata = parseInt(maxdata);
+                 const maxvipdata = maxdata+1000;
+                      
+                      if(!isNaN(maxdata)){
+                          moneyaccumulate.update({
+                                    to: maxdata,
+                                    max:maxvipdata
+                                });
+                             } 
+                         //.... call ajax pass todata & max data to server
+                    });
+            });
+      </script>
+<!-- 年齡 -->
+  <script>
+      
+    
+      $("#age").ionRangeSlider({
+                type: "double",
+                min: 20, //最小值
+                max: 85,//最大值
+                step: 1,
+                to:60,//初始最大值
+                postfix: "歲",
+                //以下四個function可用
+                onStart: function (data) {
+                    // console.log(data);
+                },
+                onChange:function (data) {
+                    // console.log(data);
+                },
+                onFinish:function (data) {
+                    // console.log(data);
+                    console.log("from: "+data.from+" to: "+data.to);
+                   
+                },
+                onUpdate:function (data) {
+                    // console.log(data);
+                }
+            });
+
+           
+  </script>
+
+  <!-- 生日 -->
+  <script>
+      
+      $("#birth").ionRangeSlider({
+            type: "double",
+            values: [
+                "1月", "2月", "3月",
+                "4月", "5月", "6月",
+                "7月", "8月", "9月", "10月", "11月", "12月"
+            ],
+            onStart: function (data) {
+                // console.log(data);
+            },
+            onChange: function (data) {
+                // console.log(data);
+            },
+            onFinish: function (data) {
+                console.log(data);
+            },
+            onUpdate: function (data) {
+                // console.log(data);
+            }
+        });
+  </script>
+
+  <!-- 平均年購物頻率 -->
+  <script>
+      $("#buyfrequency").ionRangeSlider({
+            type: "double",
+            values: [
+                "一次", "二次", "三次",
+                "四次", "五次", "六次",
+                "七次", "八次", "九次", "十次","十次以上"
+            ],
+            onStart: function (data) {
+                // console.log(data);
+            },
+            onChange: function (data) {
+                // console.log(data);
+            },
+            onFinish: function (data) {
+                console.log(data);
+            },
+            onUpdate: function (data) {
+                // console.log(data);
+            }
+        });
+// 活躍度
+        $("#peractive").ionRangeSlider({
+            type: "double",
+            values: [
+                "1個月", "2個月", "3個月","4個月", "5個月", "6個月",
+                "7個月", "8個月", "9個月","10個月", "11個月", "12個月",
+                "13個月", "14個月", "15個月", "16個月","17個月","18個月", "19個月", "20個月", "21個月","22個月","23個月","24個月","24個月以上"
+            ],
+            onStart: function (data) {
+                // console.log(data);
+            },
+            onChange: function (data) {
+                // console.log(data);
+            },
+            onFinish: function (data) {
+                // console.log(data);
+            },
+            onUpdate: function (data) {
+                // console.log(data);
+            }
+        });
+// 平均年購物頻率
+   $("#buyfrequency").ionRangeSlider({
+            type: "double",
+            values: [
+                "一次", "二次", "三次",
+                "四次", "五次", "六次",
+                "七次", "八次", "九次", "十次","十次以上"
+            ],
+            onStart: function (data) {
+                // console.log(data);
+            },
+            onChange: function (data) {
+                // console.log(data);
+            },
+            onFinish: function (data) {
+                console.log(data);
+            },
+            onUpdate: function (data) {
+                // console.log(data);
+            }
+        });
+  </script>
+
+   <!-- 表格內標籤collapse -->
+   <script>
+   function collapse(){
+            var trcount = $("#example tr").length;
+            var arrow = $(".test1 a");
+            // $("#example .test1 span:eq(5)").after("<br>")
+            // $("#example .test1 span:eq(8)").after("<br>")
+            for (var i = 0; i <trcount; i++) {
+                    // 只有超過三個的標前才會有展開
+                    if($("#example .test1:eq("+i+") span").length >3){
+                        var herf = "<a data-toggle='collapse' data-target='#tdtag"+i+"' href='#tagdemo"+i+"' class='collapsed'></a>";
+                        $("#example .test1:eq("+i+")").prepend(herf);
+                        // 超過三個標籤便隱藏 next() * 次數  = 隱藏幾個
+                        var collapsetag = "<div id='tdtag"+i+"' class='sysline collapse'></div>"; 
+                        $(".test1:eq("+i+") span").next().next().next().wrapAll(collapsetag) ; 
+                        $(".test1:eq("+i+") span:eq(5)").after("<br>") ; 
+                        $(".test1:eq("+i+") span:eq(8)").after("<br>") ; 
+                        $(".test1:eq("+i+") span:eq(11)").after("<br>") ; 
+                        } 
+                   }
+              }
+              collapse();
+      
+
+      // click tag to show filter
+      var counter = 0;
+      $('#example span').click(function() {
+          var tagData = $(this).text(); // get text of choosing tag
+          var tagClass = $(this).attr('class'); // get class of tag
+          var filter = $("#addfilter span").length; // check filter if empty
+
+            $.ajax({
+                type: 'POST',
+                // url: '',
+                data: { tagData: tagData,tagClass:tagClass},
+                datatype: 'html',
+                cache: 'false',
+                success: function(response) {
+
+                if (filter==0) {
+                           
+                      var tag = "<span class='"+tagClass+"'>"+tagData+"<a href='#' id='deltag"+(counter)+"'><i class='glyphicon glyphicon-remove' id='removebtn"+(counter)+"'></i></a></span>"
+                       $("#addfilter").append(tag); // add tag
+                        
+                      }  else if(filter > 0){
+
+                            var tagging = $("#addfilter span:contains("+tagData+")").text();
+                            if(tagging !== tagData){
+                                var tag = "<span class='"+tagClass+"'>"+tagData+"<a href='#' id='deltag"+(counter)+"'><i class='glyphicon glyphicon-remove' id='removebtn"+(counter)+"'></i></a></span>"
+                                $("#addfilter").append(tag);
+                            }
+                        }
+                      $("#deltag"+(counter)+"").click(function(e) { // remove tag
+                          e.preventDefault();$(this).parent().remove();
+                      });
+                      counter++;
+
+                },
+                error: function(){
+                    alert('fail');
+                }
+            }); // End Ajax 
+              
+
+        });
+    </script>
+    <!-- 歷史購買月份 -->
+    <script>
+      var year = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: {
+          url: 'year.json',
+          filter: function(list) {
+            return $.map(list, function(year) {
+                  return { name: year };
+               });
+          }
+        }
+      });
+      console.log(year);
+      year.initialize();
+
+      $('#tagtest').tagsinput({
+        typeaheadjs: {
+          name: 'year',
+          displayKey: 'name',
+          valueKey: 'name',
+          source: year.ttAdapter()
+        }
+
+      });
+
+      $("#tagtest").change(function(){
+          var datetag = $("#tagtest").val();//get choosing月份
+
+          console.log(datetag);
+
+          // ajax call
+      });
+      </script>
+        <!-- dataTables setting -->
+  <script>
+              var table = $('#example').DataTable( {
+                  searching : false,
+                  dom:            "Bfrtip",
+                  scrollY:        "400px",
+                  scrollX:        true,
+                  scrollCollapse: true,
+                  stateSave: true,
+                  paging:         false,
+                  buttons:        [ 'colvis' ],
+                  fixedColumns:   {
+                      leftColumns: 4
+                  }
+                  // "stateSaveCallback": function (settings, data) {
+                  //   $.ajax( {
+                  //     "url": "",
+                  //     "data": {data:JSON.stringify(data)},
+                  //     "dataType": "json",
+                  //     "type": "POST",
+                  //     "success": function () {
+                  //        ;}
+                  //   } );
+                  // },
+                  //  stateLoadCallback: function (settings, callback) {
+                  //     $.ajax( {
+                  //         url: '',
+                  //         async: false,
+                  //         dataType: 'json',
+                  //         success: function (json) {
+                  //             callback( json );
+                  //         }
+                  //     } );
+                  // }
+              });
+
+           $('.dt-buttons').append('<button class="btn btn-success mr-xs pull-right" type="button" style="height:30px;position:relative;"><i class="fa fa-file-excel-o" style="position:relative;top:-2px;"></i></button>');
+              
+  </script>
+    </body>
+
+</html>

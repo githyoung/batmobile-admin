@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-Han">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>信息中心</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/layout_nosidebar.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- <link href="assets/apps/css/dynamicAdd.css" rel="stylesheet" /> -->
+        <link rel="shortcut icon" href="favicon.ico" /> 
+         <style>
+
+           .nav .open>a:hover{
+                background-color: #000;
+
+           }
+           .nav .open>a{
+                background-color: #000;
+
+           }
+             .nav>li>a:hover {
+                text-decoration: none;
+                background-color: #000;
+            }
+
+              .overlay {
+                background: #fff;  
+                display: none;        
+                position: absolute;   
+                top: 0;                 
+                right: 0;                
+                bottom: 0;
+                left: 0;
+                opacity: 0.5;
+            }
+
+            #loading-img {
+                background: url(assets/global/img/Velocity.gif) center center no-repeat;
+                background-size: 40px 40px;
+                height: 100%;
+                z-index: 20;
+            }
+           body.modal-open {
+                overflow: visible;
+            }
+         </style>
+
+
+        </head>
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md modal-open">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="index.html">
+                    <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                    </a> 
+                </div>
+                <div class="top-menu pull-left">
+                    <ul class="nav navbar-nav pull-left">
+                         <li class="classic-menu-dropdown">
+                            <a href="index.html" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;width: 120px;text-align: center"> 總覽
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="dashboard.html">共用總覽頁</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;width: 120px;text-align: center""> DMP服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="metricsall.html">受眾分析(整合分析)</a>
+                                </li>
+                                <li>
+                                    <a href="metrics.html">線上分析</a>
+                                </li>
+                                <li>
+                                    <a href="metricstag.html">線下分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;width: 120px;text-align: center""> 廣告服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="admanage.html">廣告管理</a>
+                                </li>
+                                <li>
+                                    <a href="adcreate.html">建立廣告</a>
+                                </li>
+                                <li>
+                                    <a href="addashboard.html">廣告成效</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;width: 120px;text-align: center""> 深入分析
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="explore.html">所有圖表</a>
+                                </li>
+                                <li>
+                                    <a href="chartsedit.html">建立新表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff;width: 120px;text-align: center""> 帳號管理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="administrator.html">權限管理</a>
+                                </li>
+                                 <li>
+                                    <a href="group.html">群組管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 5 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">5 則</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">今天早上10:00</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> 會員成長超過150%. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3分鐘前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> 新的使用者登入. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">1小時間前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> 匯出會員標籤報告. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小時前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> 新的信件. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.png" />
+                                <span class="username username-hide-on-mobile"> BatUser </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="profile.html">
+                                        <i class="icon-user"></i> 設定 </a>
+                                </li>
+                               
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="logout.html">
+                                        <i class="icon-key"></i> 登出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container" style="background-color: #c8c8c8;">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">總覽</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>每週報表</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="page-toolbar">
+                            <div class="btn-group pull-right btn-fit-height" data-toggle="buttons" id="period">
+                                <label class="btn btn-default">
+                                    <input type="radio" class="toggle" value="day">日</label>
+                                <label class="btn btn-default">
+                                    <input type="radio" class="toggle" value="week">週</label>
+                                <label class="btn btn-default">
+                                    <input type="radio" class="toggle" value="month">月</label>
+                                <label class="btn btn-default active">
+                                    <input type="radio" class="toggle" value="year">年</label>
+                            </div>
+                        </div>
+
+                        <div class="page-toolbar">
+                            <div id="dashboard-report-range" class="pull-right btn btn-fit-height grey-salsa" data-container="body" data-placement="bottom" data-original-title="自訂日期" style="margin-top: 7px;margin-right: 12px;">
+                                <i class="icon-calendar"></i>&nbsp;
+                                <span class="thin uppercase hidden-xs"></span>&nbsp;
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div> 
+                    </div>
+     <!-- 指標開始 -->
+                    <h3 class="page-title">
+                         <a class="btn red btn-outline sbold" data-toggle="modal" id="basic"> 新增指標 </a>
+                    </h3>
+
+                    <div class="modal fade" id="server1_msg_modal" tabindex="-1" role="dialog"  data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title">新增指標</h4>
+                                </div>
+                                <div class="modal-body form-horizontal">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                                <label class="col-md-3 control-label">指標</label>
+                                                <div class="col-md-5">
+                                                    <select class="form-control" id="indexdata">
+                                                    </select>
+                                                </div>
+                                                 <div class="col-md-4">
+                                                    <select class="form-control" id="index_array">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">單位</label>
+                                                <div class="col-md-9">
+                                                    <select class="form-control" id="unit">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-8 col-md-10" style="margin-left: 77%;">
+                                                    <button type="button" id="close" class="btn default" data-dismiss="modal">取消</button>
+                                                    <button id="submit" class="btn blue">建立</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="index_chart"></div>
+                    <div class="clearfix"></div>
+     <!-- 指標結束 -->
+              
+     <!-- 基本圖表開始 -->
+                    <div class="row" id="basicchart1"></div>
+                    <div class="row" id="basicchart3"></div>
+        <!-- 基本圖表結束 -->
+    
+    <!-- 新增圖表開始 -->
+
+                    <div class="row" >
+                     <p style="text-align: center;border-bottom: 1px solid #eee;"><a class="btn red btn-outline sbold" href="chartsedit.html"> + 新增圖表 </a></p>
+                    </div>
+                    <div class="row" id="newchart"></div>
+    <!-- 新增圖表結束 -->
+                 <div id="chartModal" class="modal" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="col-sm-10 col-sm-offset-1" style="margin-top: 1%;">
+                         <div class="modal-content">
+
+                          <div class="modal-body"></div>
+                           <div class="modal-footer">
+                             <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- loading gif -->
+        <div class="overlay">
+            <div id="loading-img"></div>
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; BatMobile DMP SYSTEM.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script> 
+        <![endif]-->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/moment.min.js" type="text/javascript"></script>
+
+        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-daterangepicker/zh-tw.js" type="text/javascript"></script>
+
+        <script src="assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+       
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        
+        <!-- echarts -->
+        <script src="assets/apps/scripts/echarts.min.js" type="text/javascript"></script>
+        <script src="assets/apps/scripts/batcolor.js" type="text/javascript"></script>
+
+<!-- loading gif -->
+    <script>
+        function loading(){
+         $(".overlay").show(0).delay(1000).hide(0);
+        }
+    </script>
+
+
+<!-- 基本四張圖 -->
+    <script>
+    jQuery(document).ready(function() {
+
+// *********************  四張基本圖  ******************************
+
+
+
+// 現在日期
+            $('#dashboard-report-range').daterangepicker({
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment()
+            }); 
+            var startDate = $('#dashboard-report-range').data('daterangepicker').startDate.format('YYYY/MM/DD');
+            var endDate = $('#dashboard-report-range').data('daterangepicker').endDate.format('MM/DD');
+
+              console.log(startDate); //開始日期
+              console.log(endDate); // 結束日期
+
+            
+            $( "#period label" ).on( "click", function() {
+                     console.log(startDate+','+endDate+','+$( this ).children().val() );
+                });
+
+
+// 現在日期 結束
+
+
+// 四張基本圖- 折線圖開始
+            var linechartObj = [ //折線圖array
+                {
+                    name:'銷售總額',
+                    type:'line',
+                    stack: '總量',
+                    data:[120, 132, 101, 134, 90, 230, 210],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'outside'
+                        }
+                    },
+                }
+            ]
+            var linechartData = [];
+            for(var i = 0 ; i < linechartObj.length; i++){
+                        linechartData.push(linechartObj[i].name);
+                    }
+            // html 元素  
+            var newchart = "";
+                newchart +='<div class="col-md-12"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">七日銷售額</span><br><span class="caption-helper">('+startDate+'~'+endDate+')</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart1" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart1').append(newchart);
+                 
+            var myChart = echarts.init(document.getElementById('chart1'),'batcolor');
+
+            // 產生折線圖function
+            function initLineEcharts() {
+            optionline = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow' 
+            }},
+            legend: {
+                left:'left',
+                data: linechartData
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    mark : {show: true},
+                magicType: {show: true, type: ['line', 'bar']},
+                saveAsImage : {show: true}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['周一','周二','周三','周四','周五','周六','周日']
+            },
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: linechartObj
+           };
+            
+            myChart.setOption(optionline);
+            // myChart.on('click', function (params) {
+                                    
+            //         console.log(params.name);
+            //         console.log(params.seriesType);
+            //         console.log(params.seriesName);
+            //         console.log(params.data);
+            //         // console.log(params.dataType);
+            //         // console.log(params.componentType);
+            //         // console.log(params.seriesIndex);
+            //         // console.log(params.dataIndex);
+            //         // console.log(params.value);
+            //         // console.log(params.color);
+            //          // 給日期 
+            //          window.location.href = 'https://chartsedit.html?s=' + encodeURIComponent(params.name)+'&t='+ encodeURIComponent(params.seriesType)+'&n='+ encodeURIComponent(params.seriesName)+'&d='+ encodeURIComponent(params.seriesType)+'&n='+ encodeURIComponent(params.data);
+            //     });
+
+
+        };
+        initLineEcharts();
+
+
+        
+// 四張基本圖- 折線圖結束
+
+// 四張基本圖- 圓餅圖開始
+            var piecharts = [
+                                {value:335, name:'卡其褲'},
+                                {value:310, name:'牛仔褲'},
+                                {value:234, name:'皮外套'},
+                                {value:135, name:'經典款T恤'},
+                                {value:1548, name:'直筒褲'}
+                            ]
+            var PieEchartsLegend = [];
+            for(var i = 0 ; i < piecharts.length; i++){
+                                PieEchartsLegend.push(piecharts[i].name);
+                            }
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-4"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">TOP5商品細項銷售額</span><br><span class="caption-helper">'+startDate+'~'+endDate+'</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart2" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart3').append(newchart);            
+               
+                function initBarCircle(){
+                var myChartpie = echarts.init(document.getElementById('chart2'),'batcolor');
+                optionbar1 = {
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data: PieEchartsLegend
+                    },
+                    toolbox: {
+                    show : true,
+                    feature : {
+                        saveAsImage : {show: true}
+                      }
+                    },
+                    series : [
+                        {
+                            name: '商品來源',
+                            type: 'pie',
+                            radius : '55%',
+                            center: ['50%', '60%'],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            },
+                            data:piecharts
+                        }
+                    ]
+                };
+                myChartpie.setOption(optionbar1);
+              }
+              initBarCircle();
+// 四張基本圖- 圓餅圖結束
+
+
+// 四張基本圖-  長條圖開始
+            var barObj =  ["上衣","褲子","外套","鞋子","皮帶"];
+            var barData = [5, 20, 36, 10, 10];
+            var ytitle = '銷量'; // Y軸標題
+
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-4"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">TOP5商品類型銷售額</span><br><span class="caption-helper">'+startDate+'~'+endDate+'</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart3" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart3').append(newchart); 
+            
+            function initBarEcharts(){
+                var optionBar = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow' 
+                    }},
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    legend: {
+                        left:'left',
+                        data:[ytitle] // Y軸標題
+                    },
+                    xAxis: {
+                        data:barObj // 類別項目
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: ytitle, // Y軸標題
+                        type: 'bar',  // 圖表類型
+                        data: barData // 類別數據
+                    }]
+                };
+                    var myChartbar = echarts.init(document.getElementById('chart3'),'batcolor');
+                        myChartbar.setOption(optionBar);
+
+                }
+            initBarEcharts();
+// 四張基本圖- 長條圖結束
+
+// 四張基本圖- 正負長條圖開始
+        var prchartObj = [
+             {
+                    name:'利潤',
+                    type:'bar',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                    data:[200, 170, 240, 244, 200, 220, 210]
+                },
+                {
+                    name:'收入',
+                    type:'bar',
+                    stack: '總量',
+                    label: {
+                        normal: {
+                            show: true
+                        }
+                    },
+                    data:[320, 302, 341, 374, 390, 450, 420]
+                },
+                {
+                    name:'支出',
+                    type:'bar',
+                    stack: '總量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'left'
+                        }
+                    },
+                    data:[-120, -132, -101, -134, -190, -230, -210]
+                }
+        ]
+        var prchartData = [];
+        for(var i = 0 ; i < prchartObj.length; i++){
+                    prchartData.push(prchartObj[i]);
+                }
+
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-4"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售收支</span><br><span class="caption-helper">'+startDate+'~'+endDate+'</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?datess='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart4" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart3').append(newchart); 
+
+         function initBarEchartpr() {
+            chart4 = {
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {            
+                        type : 'shadow'
+                    }
+                },
+                legend: {
+                     left:'left',
+                    data:['利潤', '支出', '收入']
+                },
+            toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                saveAsImage : {show: true}
+              }
+            },
+             grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+           yAxis : [
+                {
+                    type : 'category',
+                    axisTick : {show: false},
+                    data : ['周一','周二','周三','周四','周五','周六','周日',]
+                }
+            ],
+            series : prchartData
+        };
+
+        var myChartbar2 = echarts.init(document.getElementById('chart4'),'batcolor');
+            myChartbar2.setOption(chart4);
+
+        }
+        initBarEchartpr();
+
+// 四張基本圖- 正負長條圖結束
+
+
+
+// ********************* 自訂日期   ******************************
+          
+// 中文化日曆
+            $('#dashboard-report-range span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+            $('#dashboard-report-range').daterangepicker({
+                format: 'YYYY-MM-DD',
+                locale:"zh-tw",
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/1900',
+                maxDate: '12/31/2100',
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    '前7日': [moment().subtract(6, 'days'), moment()],
+                    '前30日': [moment().subtract(29, 'days'), moment()],
+                    '這一個月': [moment().startOf('month'), moment().endOf('month')],
+                    '上一個月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-default',
+                cancelClass: 'btn-white',
+                separator: ' to ',
+                locale: {
+                    applyLabel: '確認',
+                    cancelLabel: '取消',
+                    fromLabel: '從',
+                    toLabel: '到',
+                    customRangeLabel: '自訂日期',
+                    daysOfWeek:["日","一","二","三","四","五","六"],
+                    monthNames: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+                    firstDay: 1
+                }
+            }, function (start, end, label) {
+
+
+                $("#basicchart1").empty();//清除原有元素
+                $("#basicchart3").empty();//清除原有元素
+
+                $('#dashboard-report-range span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+
+                // 正常格式的日期
+                var startDate = $('#dashboard-report-range').data('daterangepicker').startDate.format('YYYY/MM/DD');
+                var endDate = $('#dashboard-report-range').data('daterangepicker').endDate.format('YYYY/MM/DD');
+
+
+                // 自訂格式日期
+                var customstartDate = $('#dashboard-report-range').data('daterangepicker').startDate.format('YYYYMMDD');
+                var customendDate = $('#dashboard-report-range').data('daterangepicker').endDate.format('YYYYMMDD');
+
+
+// 自訂日期 開始
+                var currentDate = endDate;
+                var finalday = customendDate - customstartDate ;
+                switch(finalday) {
+                    case 6:
+                        var finalday = 1;
+                        break;
+                    case 98:
+                        var finalday = 2;
+                        break;
+                    case 29:
+                        var finalday = 3;
+                        break;
+                    case 30:
+                        var finalday = 4;
+                        break;
+                    default:
+                        var finalday = 0;
+                 }
+                console.log(startDate); //開始日期
+                console.log(endDate); // 結束日期
+                console.log(finalday);//click ranges date of type num .
+
+
+// 自訂日期 結束
+
+// *********************  更新日期後refresh圖表  ******************************
+
+// 四張基本圖- refresh by date 折線圖開始
+            var linechartObj = [ //折線圖array
+                {
+                    name:'銷售總額',
+                    type:'line',
+                    stack: '總量',
+                    data:[120, 132, 101, 134, 90, 230, 210],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'outside'
+                        }
+                    },
+                }
+            ]
+
+            var linechartData = [];
+            for(var i = 0 ; i < linechartObj.length; i++){
+                        linechartData.push(linechartObj[i].name);
+                    }
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-12"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">七日銷售額refresh</span><br><span class="caption-helper">('+startDate+'~'+endDate+')</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart1" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart1').append(newchart);
+
+            // 產生折線圖function
+            function initLineEcharts() {
+            var myChart = echarts.init(document.getElementById('chart1'),'batcolor');
+            option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow' 
+            }},
+            legend: {
+                left:'left',
+                data: linechartData
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    mark : {show: true},
+                magicType: {show: true, type: ['line', 'bar']},
+                saveAsImage : {show: true}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['周一','周二','周三','周四','周五','周六','周日']
+            },
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}K'
+                }
+            }],
+            series: linechartObj
+           };
+            
+            myChart.setOption(option);
+            myChart.on('click', function (params) {
+                                    
+                    console.log(params.name);
+                    console.log(params.seriesType);
+                    console.log(params.seriesName);
+                    console.log(params.data);
+                    // console.log(params.dataType);
+                    // console.log(params.componentType);
+                    // console.log(params.seriesIndex);
+                    // console.log(params.dataIndex);
+                    // console.log(params.value);
+                    // console.log(params.color);
+                     // 給日期 
+                     window.location.href = 'https://chartsedit.html?s=' + encodeURIComponent(params.name)+'&t='+ encodeURIComponent(params.seriesType)+'&n='+ encodeURIComponent(params.seriesName)+'&d='+ encodeURIComponent(params.seriesType)+'&n='+ encodeURIComponent(params.data);
+                });
+
+               
+
+        };
+        initLineEcharts();
+// 四張基本圖- refresh by date折線圖結束
+
+// 四張基本圖- refresh by date圓餅圖開始
+            var PieEcharts = [
+                                {value:335, name:'卡其褲'},
+                                {value:310, name:'牛仔褲'},
+                                {value:234, name:'皮外套'},
+                                {value:135, name:'經典款T恤'},
+                                {value:1548, name:'直筒褲'}
+                            ]
+            var PieEchartsLegend = [];
+            for(var i = 0 ; i < PieEcharts.length; i++){
+                                PieEchartsLegend.push(PieEcharts[i].name);
+                            }
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-4"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">商品銷售refresh</span><br><span class="caption-helper">'+startDate+'~'+endDate+'</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart2" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart3').append(newchart);            
+               
+                function initBarCircle(){
+                var myChart = echarts.init(document.getElementById('chart2'),'batcolor');
+                option = {
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data: PieEchartsLegend
+                    },
+                    toolbox: {
+                    show : true,
+                    feature : {
+                        saveAsImage : {show: true}
+                      }
+                    },
+                    series : [
+                        {
+                            name: '商品來源',
+                            type: 'pie',
+                            radius : '55%',
+                            center: ['50%', '60%'],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            },
+                            data:PieEcharts
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+              }
+              initBarCircle();
+// 四張基本圖- refresh by date圓餅圖結束
+
+
+// 四張基本圖-  refresh by date長條圖開始
+            var barObj =  ["上衣","褲子","外套","鞋子","皮帶","毛巾"];
+            var barData = [5, 20, 36, 10, 10, 20];
+            var ytitle = '銷量'; // Y軸標題
+
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-4"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額refresh</span><br><span class="caption-helper">'+startDate+'~'+endDate+'</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart3" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart3').append(newchart); 
+            
+            function initBarEcharts(){
+                var optionBar = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow' 
+                    }},
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    legend: {
+                        left:'left',
+                        data:[ytitle] // Y軸標題
+                    },
+                    xAxis: {
+                        data:barObj // 類別項目
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: ytitle, // Y軸標題
+                        type: 'bar',  // 圖表類型
+                        data: barData // 類別數據
+                    }]
+                };
+                    var myChartbar = echarts.init(document.getElementById('chart3'),'batcolor');
+                        myChartbar.setOption(optionBar);
+
+                }
+            initBarEcharts();
+// 四張基本圖- refresh by date長條圖結束
+
+// 四張基本圖- refresh by date正負長條圖開始
+        var prchartObj = [
+             {
+                    name:'利潤',
+                    type:'bar',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                    data:[200, 170, 240, 244, 200, 220, 210]
+                },
+                {
+                    name:'收入',
+                    type:'bar',
+                    stack: '總量',
+                    label: {
+                        normal: {
+                            show: true
+                        }
+                    },
+                    data:[320, 302, 341, 374, 390, 450, 420]
+                },
+                {
+                    name:'支出',
+                    type:'bar',
+                    stack: '總量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'left'
+                        }
+                    },
+                    data:[-120, -132, -101, -134, -190, -230, -210]
+                }
+        ]
+        var prchartData = [];
+        for(var i = 0 ; i < prchartObj.length; i++){
+                    prchartData.push(prchartObj[i]);
+                }
+
+            // html 元素
+            var newchart = "";
+                newchart +='<div class="col-md-4"><div class="portlet light">';
+                newchart +='<div class="portlet-title">';
+                newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售收支refresh</span><br><span class="caption-helper">'+startDate+'~'+endDate+'</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="https://chartsedit.html?date='+startDate+','+endDate+'" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a></div>';
+                newchart +='</div>';
+                newchart +='<div class="portlet-body"><div id="chart4" style="height:300px;margin-top: 10px;"></div></div>';
+                newchart +='</div></div>';
+                $('#basicchart3').append(newchart); 
+
+         function initBarEchartpr() {
+            optionBar2 = {
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer : {            
+                        type : 'shadow'
+                    }
+                },
+                legend: {
+                     left:'left',
+                    data:['利潤', '支出', '收入']
+                },
+            toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                saveAsImage : {show: true}
+              }
+            },
+             grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+           yAxis : [
+                {
+                    type : 'category',
+                    axisTick : {show: false},
+                    data : ['周一','周二','周三','周四','周五','周六','周日',]
+                }
+            ],
+            series : prchartData
+        };
+
+        var myChartbar2 = echarts.init(document.getElementById('chart4'),'batcolor');
+            myChartbar2.setOption(optionBar2);
+
+        }
+        initBarEchartpr();
+// 四張基本圖- refresh by date正負長條圖結束
+                        
+       });
+    });
+    </script>
+
+
+     <script>
+
+
+// *********************  新增指標  ******************************
+
+// 下拉單 loop
+        var indexdata = {
+            v_item : '商品',
+            v_shop : '店點',
+            v_activity :'活動',
+            v_persons : '會員',
+
+        };
+        var select = document.getElementById("indexdata");
+        for(index in indexdata) {
+            select.options[select.options.length] = new Option(indexdata[index], index);
+        }
+
+        var index_array = {
+            ValueA : '總商品數量/上衣數量/商品銷售金額',
+            ValueB : '總店點數/北區/中區/南區/店點銷售金額',
+            ValueC : '活動總數量/活動名稱數量/活動名稱銷售金額',
+            ValueD : '會員新增人數'
+
+        };
+        var select = document.getElementById("index_array");
+        for(index in index_array) {
+            select.options[select.options.length] = new Option(index_array[index], index);
+        }
+
+         var unit = {
+            v_amount : '人數/件數/店點數/活動數',
+            v_money : '金額'
+
+        };
+        var select = document.getElementById("unit");
+        for(index in unit) {
+            select.options[select.options.length] = new Option(unit[index], index);
+        }
+
+// 下拉單 loop end
+
+
+//初始四個指標 loop
+    jQuery(document).ready(function() {
+
+
+
+    var indexloop = {
+                      "icon": ["totalperson.png","salesgoods.png","","totalprofit.png","hotgoods.png"],
+                      "bg": ["up","down"],//若數值為成長則為綠色up , 反之紅色red
+                      "title": ["總會員人數"],
+                      "result_data": ["1349"],
+                      "analytic_data": ["5%"],
+                      "href": ["#"]
+                    };
+
+        for (var i = 0; i <= 3; i++) {
+                 var wrap = '';
+                     wrap += '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="dashboard-stat '+indexloop['bg'][1]+'"><div class="details"><a class="more" href="javascript:;"><i class="fa fa-remove"></i></a>'
+                     wrap += '<div class="number"><span data-counter="counterup" data-value="'+indexloop['result_data'][0]+'">'+indexloop['result_data'][0]+'</span></div><div class="desc"><img src="assets/layouts/layout/img/icon/'+indexloop['icon'][0]+'" width="20" alt="logo" class="logo-default" style="margin-bottom: 5px;" />'+indexloop['title'][0]+'</div></div>'
+                     wrap += '</div></div>';
+                     $('#index_chart').append(wrap);
+
+          }
+
+           $(".more").click(function() { 
+              var remove = $(this);
+            
+              loading();
+              setTimeout(function () {
+                     remove.parent().parent().parent().remove();
+
+                     // ajax delet
+                 }, 1000);
+          });
+
+        });
+//初始四個指標 loop 結束
+
+//點擊新增指標開始
+    $("#basic").on('click',function(e){
+         e.preventDefault();
+         $('#server1_msg_modal').modal('show');
+            
+            $("#submit").unbind('click').bind('click',function(){
+
+                 var value_indexdata = $( "#indexdata option:selected").text();//取得下拉值
+                 var value_array = $( "#index_array option:selected" ).text();//取得下拉值
+                 var value_unit = $( "#unit option:selected" ).text();//取得下拉值
+                      
+                       console.log(value_indexdata);
+                       console.log(value_array);
+                       console.log(value_unit);
+                  
+                     //.... call ajax  to server
+
+            loading();//動畫gif
+            setTimeout(function () {
+
+    //新增指標array
+            var indexloop = {
+                      "icon": ["totalperson.png","salesgoods.png","","totalprofit.png","hotgoods.png"],
+                      "bg": ["up","down"],//若數值為成長則為綠色up , 反之紅色red
+                      "title": ["總會員人數"],
+                      "result_data": ["1349"],
+                      "analytic_data": ["5%"],
+                      "href": ["#"]
+                    };
+                
+             var wrap = '';
+                 wrap += '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="dashboard-stat '+indexloop['bg'][1]+'"><div class="details"><a class="more" href="javascript:;"><i class="fa fa-remove"></i></a>'
+                 wrap += '<div class="number"><span data-counter="counterup" data-value="'+indexloop['result_data'][0]+'">'+indexloop['result_data'][0]+'</span></div><div class="desc"><img src="assets/layouts/layout/img/icon/'+indexloop['icon'][0]+'" width="20" alt="logo" class="logo-default" style="margin-bottom: 5px;" />'+indexloop['title'][0]+'</div></div>'
+                 wrap += '</div></div>';
+                 $('#index_chart').append(wrap);
+
+    // 刪除指標
+                  $(".more").click(function() { 
+                          var remove = $(this);
+                          loading();
+                          setTimeout(function () {
+                                 remove.parent().parent().parent().remove();
+
+                                 // ajax delet
+                        }, 1000);
+                      });
+
+                  }, 1000);
+                  $('#server1_msg_modal').modal('hide');
+
+              });
+          });
+    </script>
+
+    <script>
+    // 此為初始刪除指標DOM
+        $(".more").click(function() { 
+              var remove = $(this);
+            
+              loading();
+              setTimeout(function () {
+                     remove.parent().parent().parent().remove();
+
+                     // ajax delet
+                 }, 1000);
+          });
+    </script>
+<!-- *********************  新增指標結束  ****************************** -->
+
+<!--  *********************  添加的圖表迴圈  ******************************-->
+    <script>
+
+    jQuery(document).ready(function() {
+
+
+        // 添加的圖表- 長條圖開始
+
+            // html元素
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart5" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+          
+
+          // 長條圖模板
+            var barObj =  ["上衣","褲子","外套","鞋子","皮帶","毛巾"];
+            var barData = [5, 20, 36, 10, 10, 20];
+            var ytitle = '銷量'; // Y軸標題
+            var optionBar = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow' 
+                }},
+                toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        saveAsImage : {show: true}
+                    }
+                },
+                legend: {
+                    left:'left',
+                    data:[ytitle] // Y軸標題
+                },
+                xAxis: {
+                    data:barObj // 類別項目
+                },
+                yAxis: {},
+                series: [{
+                    name: ytitle, // Y軸標題
+                    type: 'bar',  // 圖表類型
+                    data: barData // 類別數據
+                }]
+            };
+            var myChartbar = echarts.init(document.getElementById("chart5"),'batcolor');
+            myChartbar.setOption(optionBar);
+
+            // 長條圖模板結束
+// 添加的圖表- 長條圖結束
+
+
+// 添加的圖表- 折線圖開始
+
+
+            // html元素
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">折線</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart6" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+               
+             var linechartObj = [
+                    {
+                        name:'銷售總額',
+                        type:'line',
+                        stack: '總量',
+                        data:[120, 132, 101, 134, 90, 230, 210],
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'outside'
+                            }
+                        },
+                    }
+                ]
+                var linechartData = [];
+                for(var j = 0 ; j < linechartObj.length; j++){
+                            linechartData.push(linechartObj[j].name);
+                        }
+                optionline1 = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow' 
+                }},
+                legend: {
+                    left:'left',
+                    data: linechartData
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                toolbox: {
+                    feature: {
+                        mark : {show: true},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    saveAsImage : {show: true}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['周一','周二','周三','周四','周五','周六','周日']
+                },
+                yAxis: [{
+                    type: 'value',
+                    min: 0,
+                    max: 250,
+                    interval: 50,
+                    axisLabel: {
+                        formatter: '{value}K'
+                    }
+                }],
+                series: linechartObj
+             };
+
+            var myChartline = echarts.init(document.getElementById("chart6"),'batcolor');
+                myChartline.setOption(optionline1);
+             
+// 添加的圖表- 折線圖結束
+
+// 添加的圖表- 圓餅圖開始
+         
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">圓餅圖</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart7" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+             var pielinecharts = [
+                                {value:335, name:'卡其褲'},
+                                {value:310, name:'牛仔褲'},
+                                {value:234, name:'皮外套'},
+                                {value:135, name:'經典款T恤'},
+                                {value:1548, name:'直筒褲'}
+                            ]
+            var PieEchartsLegend = [];
+            for(var i = 0 ; i < pielinecharts.length; i++){
+                                PieEchartsLegend.push(pielinecharts[i].name);
+                            }
+                optionbarloop = {
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data: PieEchartsLegend
+                    },
+                    toolbox: {
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        saveAsImage : {show: true}
+                      }
+                    },
+                    series : [
+                        {
+                            name: '商品來源',
+                            type: 'pie',
+                            radius : '55%',
+                            center: ['50%', '60%'],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            },
+                            data:pielinecharts
+                        }
+                    ]
+                };
+            var myChart = echarts.init(document.getElementById("chart7"),'batcolor');
+                myChart.setOption(optionbarloop);
+// 添加的圖表- 圓餅圖結束
+
+
+// 添加的圖表- 正負長條圖開始
+
+           
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart8" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+              var prchartObj = [
+             {
+                    name:'利潤',
+                    type:'bar',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                    data:[200, 170, 240, 244, 200, 220, 210]
+                },
+                {
+                    name:'收入',
+                    type:'bar',
+                    stack: '總量',
+                    label: {
+                        normal: {
+                            show: true
+                        }
+                    },
+                    data:[320, 302, 341, 374, 390, 450, 420]
+                },
+                {
+                    name:'支出',
+                    type:'bar',
+                    stack: '總量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'left'
+                        }
+                    },
+                    data:[-120, -132, -101, -134, -190, -230, -210]
+                }
+        ]
+            var prchartData = [];
+            for(var i = 0 ; i < prchartObj.length; i++){
+                        prchartData.push(prchartObj[i]);
+                    }
+                option = {
+                    tooltip : {
+                        trigger: 'axis',
+                        axisPointer : {            
+                            type : 'shadow'
+                        }
+                    },
+                    legend: {
+                         left:'left',
+                        data:['利潤', '支出', '收入']
+                    },
+                toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    saveAsImage : {show: true}
+                  }
+                },
+                 grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+               yAxis : [
+                    {
+                        type : 'category',
+                        axisTick : {show: false},
+                        data : ['周一','周二','周三','周四','周五','周六','周日',]
+                    }
+                ],
+                series : prchartData
+            };
+            var mypnchart = echarts.init(document.getElementById("chart8"),'batcolor');
+                mypnchart.setOption(option);
+
+// 添加的圖表- 正負長條圖結束
+
+// 添加的圖表- 分群長條圖開始
+        
+            var multibar = 'chart'+i;
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart9" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+
+            var multibarObj = [{
+                                name: '包租费',
+                                type: 'bar',
+                                data: [20, 12, 31, 34, 31]
+                            }, {
+                                name: '装修费',
+                                type: 'bar',
+                                data: [10, 20, 5, 9, 3]
+                            }, {
+                                name: '保洁费',
+                                type: 'bar',
+                                data: [1, 1, 2, 3, 1]
+                            }, {
+                                name: '物业费',
+                                type: 'bar',
+                                data: [0.1, 2, 3, 1, 0.5]
+                            }]
+            var multibardata = ['包租费', '装修费', '保洁费', '物业费'];
+            var multibarCategory = ['新虹桥', '中山公园', '虹桥', '镇宁路', '天山古北'];
+            var option = {
+               
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { 
+                        type: 'shadow' 
+                    }
+                },
+                legend: {
+                    left:'left',
+                    data: multibardata,
+                    align: 'right',
+                    right: 10
+                },
+                toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    saveAsImage : {show: true}
+                  }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: multibarCategory
+                }],
+                yAxis: [{
+                    type: 'value',
+                    name: '總價(萬元)',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }],
+                series: multibarObj
+            };
+             
+            var mypnchart = echarts.init(document.getElementById("chart9"),'batcolor');
+                mypnchart.setOption(option);
+
+// 添加的圖表- 分群長條圖結束
+
+// 添加的圖表- 柱折混合圖開始
+
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart10" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+
+            var barlineObj = [
+                        {
+                            name:'蒸发量',
+                            type:'bar',
+                            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                        },
+                        {
+                            name:'降水量',
+                            type:'bar',
+                            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        },
+                        {
+                            name:'平均温度',
+                            type:'line',
+                            yAxisIndex: 1,
+                            data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+                        }
+                    ]
+            var barlinedata = ['蒸发量','降水量','平均温度'];
+            var barlineCategory = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+            option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {type: 'shadow'}
+                    },
+                    toolbox: {
+                        feature: {
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    legend: {
+                        left:'left',
+                        data:barlinedata
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: barlineCategory
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '水量',
+                            min: 0,
+                            max: 250,
+                            interval: 50,
+                            axisLabel: {
+                                formatter: '{value} ml'
+                            }
+                        },
+                        {
+                            type: 'value',
+                            name: '温度',
+                            min: 0,
+                            max: 25,
+                            interval: 5,
+                            axisLabel: {
+                                formatter: '{value} °C'
+                            }
+                        }
+                    ],
+                    series: barlineObj
+                };
+
+              var mypnchart = echarts.init(document.getElementById("chart10"),'batcolor');
+                  mypnchart.setOption(option);
+
+// 添加的圖表- 柱折混合圖結束
+
+// 添加的圖表- 雙軸圖開始
+     
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart11" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+
+            var doubleXObj = [
+                        {
+                            name:'預購隊列',
+                            type:'bar',
+                            xAxisIndex: 1,
+                            yAxisIndex: 1,
+                            data:(function (){
+                                var res = [];
+                                var len = 10;
+                                while (len--) {
+                                    res.push(Math.round(Math.random() * 1000));
+                                }
+                                return res;
+                            })()
+                        },
+                        {
+                            name:'最新成交价',
+                            type:'line',
+                            data:(function (){
+                                var res = [];
+                                var len = 0;
+                                while (len < 10) {
+                                    res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                                    len++;
+                                }
+                                return res;
+                            })()
+                        }
+                    ]
+            var doubleXdata = ['最新成交价', '预购队列'];
+            var doubleXCategory = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月'];
+            var doubleXCategory2 = ['20','30','40','50','60','70','80','90','100','30'];
+            option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                backgroundColor: '#283b56'
+                            }
+                        }
+                    },
+                    legend: {
+                        left:'left',
+                        data:doubleXdata
+                    },
+                    toolbox: {
+                        feature: {
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    dataZoom: {
+                        show: false,
+                        start: 0,
+                        end: 100
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: true,
+                            data: doubleXCategory
+                        },
+                        {
+                            type: 'category',
+                            boundaryGap: true,
+                            data: doubleXCategory2
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            scale: true,
+                            name: '价格',
+                            max: 30,
+                            min: 0,
+                            boundaryGap: [0.2, 0.2]
+                        },
+                        {
+                            type: 'value',
+                            scale: true,
+                            name: '预购量',
+                            max: 1200,
+                            min: 0,
+                            boundaryGap: [0.2, 0.2]
+                        }
+                    ],
+                    series: doubleXObj
+                };
+              var mypnchart = echarts.init(document.getElementById("chart11"),'batcolor');
+                  mypnchart.setOption(option);
+            
+// 添加的圖表- 雙軸圖結束
+
+// 添加的圖表- 矩形樹圖開始
+
+            // html元素
+            var newchart = "";
+            newchart +='<div class="col-md-4"><div class="portlet light">';
+            newchart +='<div class="portlet-title">';
+            newchart +='<div class="caption"><span class="caption-subject uppercase" style="font-size: 16px;">銷售額</span><br><span class="caption-helper">(2017/09/01~09/08)</span></div><div class="actions"><a href="#" class="btn btn-circle btn-default focusButton" style="width:auto;height: auto;"><i class="fa fa-eye"></i></a><a href="javascript:;" class="btn btn-circle btn-default" style="width:auto;height: auto;"><i class="fa fa-pencil"></i></a><a href="javascript:;" class="btn btn-circle btn-default delchart" style="width:auto;height: auto;"><i class="fa fa-trash-o"></i></i></a></div>';
+            newchart +='</div>';
+            newchart +='<div class="portlet-body"><div id="chart12" style="height:300px;margin-top: 10px;"></div></div>';
+            newchart +='</div></div>';
+            $('#newchart').append(newchart);
+
+                var household_america_2012 = 113616229;
+                $.get('obama_budget_proposal_2012.json', function (obama_budget_2012) {//json檔案
+
+                    var formatUtil;
+
+                    function buildData(mode, originList) {
+                        var out = [];
+
+                        for (var i = 0; i < originList.length; i++) {
+                            var node = originList[i];
+                            var newNode = out[i] = cloneNodeInfo(node);
+                            var value = newNode.value;
+
+                            if (!newNode) {
+                                continue;
+                            }
+
+                            // Calculate amount per household.
+                            value[3] = value[0] / household_america_2012;
+
+                            // if mode === 0 and mode === 2 do nothing
+                            if (mode === 1) {
+                                // Set 'Change from 2010' to value[0].
+                                var tmp = value[1];
+                                value[1] = value[0];
+                                value[0] = tmp;
+                            }
+
+                            if (node.children) {
+                                newNode.children = buildData(mode, node.children);
+                            }
+                        }
+
+                        return out;
+                    }
+
+                    function cloneNodeInfo(node) {
+                        if (!node) {
+                            return;
+                        }
+
+                        var newNode = {};
+                        newNode.name = node.name;
+                        newNode.id = node.id;
+                        newNode.discretion = node.discretion;
+                        newNode.value = (node.value || []).slice();
+                        return newNode;
+                    }
+
+                    function getLevelOption(mode) {
+                        return [
+                            {
+                                color: mode === 2
+                                    ? [
+                                        '#c23531', '#314656', '#61a0a8', '#dd8668',
+                                        '#91c7ae', '#6e7074', '#61a0a8', '#bda29a',
+                                        '#44525d', '#c4ccd3'
+                                    ]
+                                    : null,
+                                colorMappingBy: 'id',
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 3,
+                                        gapWidth: 3
+                                    }
+                                }
+                            },
+                            {
+                                colorAlpha: mode === 2
+                                    ? [0.5, 1] : null,
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 1
+                                    }
+                                }
+                            }
+                        ];
+                    }
+
+                    function isValidNumber(num) {
+                        return num != null && isFinite(num);
+                    }
+
+                    function getTooltipFormatter(mode) {
+                        var amountIndex = mode === 1 ? 1 : 0;
+                        var amountIndex2011 = mode === 1 ? 0 : 1;
+
+                        return function (info) {
+                            var value = info.value;
+
+                            var amount = value[amountIndex];
+                            amount = isValidNumber(amount)
+                                ? formatUtil.addCommas(amount * 1000) + '$'
+                                : '-';
+
+                            var amount2011 = value[amountIndex2011];
+                            amount2011 = isValidNumber(amount2011)
+                                ? formatUtil.addCommas(amount2011 * 1000) + '$'
+                                : '-';
+
+                            var perHousehold = value[3];
+                            perHousehold = isValidNumber(perHousehold)
+                                ? formatUtil.addCommas((+perHousehold.toFixed(4)) * 1000) + '$'
+                                : '-';
+
+                            var change = value[2];
+                            change = isValidNumber(change)
+                                ? change.toFixed(2) + '%'
+                                : '-';
+
+                            return [
+                                '<div class="tooltip-title">' + formatUtil.encodeHTML(info.name) + '</div>',
+                                '2012 Amount: &nbsp;&nbsp;' + amount + '<br>',
+                                'Per Household: &nbsp;&nbsp;' + perHousehold + '<br>',
+                                '2011 Amount: &nbsp;&nbsp;' + amount2011 + '<br>',
+                                'Change From 2011: &nbsp;&nbsp;' + change
+                            ].join('');
+                        };
+                    }
+
+                    function createSeriesCommon(mode) {
+                        return {
+                            type: 'treemap',
+                            tooltip: {
+                                formatter: getTooltipFormatter(mode)
+                            },
+                            label: {
+                                normal: {
+                                    position: 'insideTopLeft',
+                                    formatter: function (params) {
+                                        var arr = [
+                                            '{name|' + params.name + '}',
+                                            '{hr|}',
+                                            '{budget|$ ' + echarts.format.addCommas(params.value[0]) + '} {label|budget}'
+                                        ];
+
+                                        mode !== 1 && arr.push(
+                                            '{household|$ ' + echarts.format.addCommas((+params.value[3].toFixed(4)) * 1000) + '} {label|per household}'
+                                        );
+
+                                        return arr.join('\n');
+                                    },
+                                    rich: {
+                                        budget: {
+                                            fontSize: 22,
+                                            lineHeight: 30,
+                                            color: 'yellow'
+                                        },
+                                        household: {
+                                            fontSize: 14,
+                                            color: '#fff'
+                                        },
+                                        label: {
+                                            fontSize: 9,
+                                            backgroundColor: 'rgba(0,0,0,0.3)',
+                                            color: '#fff',
+                                            borderRadius: 2,
+                                            padding: [2, 4],
+                                            lineHeight: 25,
+                                            align: 'right'
+                                        },
+                                        name: {
+                                            fontSize: 12,
+                                            color: '#fff'
+                                        },
+                                        hr: {
+                                            width: '100%',
+                                            borderColor: 'rgba(255,255,255,0.2)',
+                                            borderWidth: 0.5,
+                                            height: 0,
+                                            lineHeight: 10
+                                        }
+                                    }
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    borderColor: 'black'
+                                }
+                            },
+                            levels: getLevelOption(0)
+                        };
+                    }
+
+                    formatUtil = echarts.format;
+                    var modes = ['2012Budget', '2011Budget', 'Growth'];
+                    
+                var myrtree = echarts.init(document.getElementById("chart12"),'batcolor');
+                    myrtree.setOption(option = {
+                       
+                        legend: {
+                            data: modes,
+                            selectedMode: 'single',
+                            itemGap: 5,
+                            backgroundColor: 'rgb(243,243,243)',
+                            borderRadius: 5
+                        },
+
+                        tooltip: {
+                        },
+                        series: modes.map(function (mode, idx) {
+                            var seriesOpt = createSeriesCommon(idx);
+                            seriesOpt.name = mode;
+                            seriesOpt.top = 50;
+                            seriesOpt.visualDimension = idx === 2 ? 2 : null;
+                            seriesOpt.data = buildData(idx, obama_budget_2012);
+                            seriesOpt.levels = getLevelOption(idx);
+                            return seriesOpt;
+                        })
+                    });
+                    // 矩形樹圖結束
+                });
+
+
+
+          $('.focusButton').on('click',function(){
+
+             var appid = $(this).parent().parent().next().html();//取得id的div
+             var appid = $(appid).attr("id");//取得id
+             var cappid = '#'+appid;//準備移除舊有chart之id
+             var appidcopy = appid+'d';//自定義新chart id
+             var chartdiv = '<div id="'+appidcopy+'" style="height:500px;margin-top: 10px;"></div>';
+             //chart div
+            
+             var newRow = $(this).parent().parent().parent().parent().clone().find(cappid).remove().end(); // 圖表div
+             var newRow = $(newRow).children().append(chartdiv); //將 chart div 加入到圖表
+
+
+
+             $('#chartModal .modal-body').html(newRow); // 將圖表放到modal
+             $("#chartModal .actions").remove();
+             $('#chartModal').modal();
+
+             var appidcopy = echarts.init(document.getElementById(appidcopy),'batcolor');
+
+             // json prepare
+             
+
+             var getchartnum = cappid.charAt(cappid.length - 1);//取得圖表id num
+             appidcopy.setOption(chart4);//chart4 為 圖表的jso資料
+
+                 // appidcopy.setOption({
+                 //        tooltip : {
+                 //                trigger: 'axis',
+                 //                axisPointer : {            
+                 //                    type : 'shadow'
+                 //                }
+                 //            },
+                 //            legend: {
+                 //                 left:'left',
+                 //                data:['利潤', '支出', '收入']
+                 //            },
+                 //        toolbox: {
+                 //        show : true,
+                 //        feature : {
+                 //            mark : {show: true},
+                 //            saveAsImage : {show: true}
+                 //          }
+                 //        },
+                 //         grid: {
+                 //            left: '3%',
+                 //            right: '4%',
+                 //            bottom: '3%',
+                 //            containLabel: true
+                 //        },
+                 //        xAxis : [
+                 //            {
+                 //                type : 'value'
+                 //            }
+                 //        ],
+                 //       yAxis : [
+                 //            {
+                 //                type : 'category',
+                 //                axisTick : {show: false},
+                 //                data : ['周一','周二','周三','周四','周五','周六','周日',]
+                 //            }
+                 //        ],
+                 //        series : prchartData
+                 //    });
+
+                 $('#chartModal').on('hidden.bs.modal', function () {
+                    $('#'+appid+"").attr("tabindex",-1).focus();
+                 });
+
+            });
+            
+
+        
+
+           $(".delchart").click(function() { 
+              var remove = $(this);
+
+              var msg = "確定要刪除嗎?"; 
+                 if (confirm(msg)==true){ 
+                   loading();
+                    setTimeout(function () {
+                     remove.parent().parent().parent().parent().remove();
+
+                     // ajax delet
+                 }, 1000);
+                 }else{ 
+                  return false; 
+                 } 
+         
+          });
+        
+    });
+
+    </script>
+
+  
+    </body>
+</html>

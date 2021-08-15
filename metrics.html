@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-Han">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>裝置分析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="assets/apps/css/dynamicAdd.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <style>
+
+           .nav .open>a:hover{
+                background-color: #000;
+
+           }
+           .nav .open>a{
+                background-color: #000;
+
+           }
+             .nav>li>a:hover {
+                text-decoration: none;
+                background-color: #000;
+            }
+         </style>
+         </head>
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="index.html">
+                         <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                         </a> 
+                </div>
+
+               <div class="top-menu pull-left">
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="classic-menu-dropdown">
+                            <a href="index.html" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 總覽
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="dashboard.html">共用總覽頁</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> DMP服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                 <li>
+                                    <a href="metricsall.html">受眾分析(整合分析)</a>
+                                </li>
+                                <li>
+                                    <a href="metrics.html">線上分析</a>
+                                </li>
+                                <li>
+                                    <a href="metricstag.html">線下分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 廣告服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="admanage.html">廣告管理</a>
+                                </li>
+                                <li>
+                                    <a href="adcreate.html">建立廣告</a>
+                                </li>
+                                <li>
+                                    <a href="addashboard.html">廣告成效</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 深入分析
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="explore.html">所有圖表</a>
+                                </li>
+                                <li>
+                                    <a href="chartsedit.html">建立新表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 帳號管理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="profile.html">基本設定</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Log</a>
+                                </li>
+                                <li>
+                                    <a href="administrator.html">權限管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 5 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">5 則</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">今天早上10:00</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> 會員成長超過150%. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3分鐘前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> 新的使用者登入. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">1小時間前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> 匯出會員標籤報告. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小時前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> 新的信件. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                       
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.png" />
+                                <span class="username username-hide-on-mobile"> BatUser </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> 設定 </a>
+                                </li>
+                               
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> 登出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container" style="background-color: #c8c8c8;">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse" style="background-color: #c8c8c8;">
+                    <div class="tabbable-custom ">
+                        
+                        <div class="tab-content" style="background-color:#c8c8c8;">
+                                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                                    <li class="sidebar-toggler-wrapper hide">
+                                        <div class="sidebar-toggler"> </div>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title"><b>Audience</b></span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Overview</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Geography</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Technical</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title"><b>Real-time</b></span>
+                                            <span class="arrow open"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item start">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Analytics</span>
+                                                    <span class="selected"></span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item start ">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Crash</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title"><b>Usage</b></span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Activity</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link ">
+                                                    <span class="title">Retention</span>
+                                                </a>
+                                            </li>
+                                           
+                                        </ul>
+                                    </li>
+                                   
+
+                                    <li class="nav-item active">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title"><b>Events</b></span>
+                                            <span class="arrow"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="components_date_time_pickers.html" class="nav-link ">
+                                                    <span class="title">Event Summary</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="components_color_pickers.html" class="nav-link ">
+                                                    <span class="title">Event Details</span>
+                                                </a>
+                                            </li>
+                                             <li class="nav-item">
+                                                <a href="components_color_pickers.html" class="nav-link ">
+                                                    <span class="title">Event Logs</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                               
+                            
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+
+                <div class="page-content">
+                  
+                    <div class="clearfix"></div>
+
+
+                    <!-- END DASHBOARD STATS 1-->
+                    <div class="row" style="margin-bottom: 15px;">
+                        <div class="col-sm-12">
+                            <div class="page-bar">
+                                 <ul class="page-breadcrumb">
+                                    <li>
+                                        <a href="index.html">DMP服務</a>
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <span>裝置分析</span>
+                                        <i class="fa fa-angle-right"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>App</span>
+                                        <i class="fa fa-angle-right"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>Usage</span>
+                                        <i class="fa fa-angle-right"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>Activity</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="tabbable-custom nav-justified">
+                                        <ul class="nav nav-tabs nav-justified">
+                                            <li class="active">
+                                                <a href="#tab_1_1_1" data-toggle="tab"> App </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab_1_1_2" data-toggle="tab">  Web </a>
+                                            </li>
+                                           
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab_1_1_1">
+                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="rowfilter">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content">
+                                    <ul class="shortcut-box clearfix" style="padding-left: 0px;">
+                                        <li class="col-xs-4 col-sm-4 col-md-3 col-lg-3" data-toggle="modal" data-target="#myModal">
+                                            <div style="background-color: #000;">
+                                                <div style="font-size: 16px;width:72%;display: inline-block;float: left;height:50px;line-height: 3.2em;"><i class="fa fa-android"></i>觀天氣</div>
+                                                <div style="font-size: 16px;width:25%;display: inline-block;float: right;border-left: 1px solid;height:50px;line-height: 3.2em;"><i class="fa fa-times"></i></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-4 col-sm-4 col-md-3 col-lg-3" data-toggle="modal" data-target="#myModal">
+                                            <div style="background-color: #fa9300;">
+                                                <div style="font-size: 16px;width:72%;display: inline-block;float: left;height:50px;line-height: 3.2em;"><i class="fa fa-apple"></i>觀天氣</div>
+                                                <div style="font-size: 16px;width:25%;display: inline-block;float: right;border-left: 1px solid;height:50px;line-height: 3.2em;"><i class="fa fa-times"></i></div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-4 col-sm-4 col-md-3 col-lg-3" data-toggle="modal" data-target="#myModal">
+                                            <div style="border: 1px dashed #d5d5d5;padding: 16px 0px 13px 0px;">
+                                                <i class="md md-add"></i>
+                                                <span style="color:#000;">app<i class="fa fa-plus"></i></span>
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-4 col-sm-4 col-md-3 col-lg-3" data-toggle="modal" data-target="#myModal">
+                                            <div style="border: 1px dashed #d5d5d5;padding: 16px 0px 13px 0px;">
+                                                <i class="md md-add"></i>
+                                                <span style="color:#000;">app<i class="fa fa-plus"></i></span>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!--  <div class="row">
+                        <div class="card-box col-sm-12">
+                            <div class="col-sm-12">
+                                <ul class="list-inline" style="border-bottom: 4px solid #e3e8f1;margin-bottom: 0px;padding-bottom: 10px;">
+                                    <li>
+                                        <h5 class="text-muted m-t-20">新裝置</h5>
+                                        <h1 class="m-b-0">10,990</h1>
+                                    </li>
+                                    <li>
+                                        <h5 class="text-muted m-t-20">活躍裝置 / 天</h5>
+                                        <h1 class="m-b-0">21,929</h1>
+                                    </li>
+                                    <li>
+                                        <h5 class="text-muted m-t-20">SESSIONS / 天</h5>
+                                        <h1 class="m-b-0">49,130</h1>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4" style="border-right: 4px solid #e3e8f1;">
+                                <div id="app1" style="height:300px;margin-top: 10px;"></div>
+                            </div>
+                            <div class="col-sm-4" style="border-right: 4px solid #e3e8f1;">
+                                <div id="app2" style="height:300px;margin-top: 10px;"></div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="app3" style="height:300px;margin-top: 10px;"></div>
+                            </div>
+                       </div>
+                    </div> -->
+                    <div class="row">
+                         <div class="col-md-12">
+                            <div class="portlet custom portlet-fit bordered">
+                                <div class="portlet-body">
+                                    <div id="app1" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-md-4">
+                            <div class="portlet custom portlet-fit bordered" style="background-color: #fff;">
+                                <div class="portlet-body">
+                                    <div id="app2" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="portlet custom portlet-fit bordered" style="background-color: #fff;">
+                                <div class="portlet-body">
+                                    <div id="app3" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-md-4">
+                            <div class="portlet custom portlet-fit bordered" style="background-color: #fff;">
+                                <div class="portlet-body">
+                                    <div id="app4" style="height:300px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab_1_1_2">
+                                                same with app
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                  
+                
+                  
+                </div>
+            </div>
+            
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; BatMobile DMP SYSTEM.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script> 
+        <![endif]-->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+       
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        
+        <!-- echarts -->
+        <script src="assets/apps/scripts/echarts.min.js" type="text/javascript"></script>
+        <script src="assets/apps/scripts/infographic.js" type="text/javascript"></script>
+
+        
+
+        <script>
+            var myChart = echarts.init(document.getElementById('app1'),'infographic');
+            option = {
+            title: {
+                text: 'DAU',
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '42',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['人數'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}人'
+                }
+            }],
+            series: [{
+                    name: '人數',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+                    var myChart = echarts.init(document.getElementById('app2'),'infographic');
+                    option = {
+            title: {
+                text: 'UAU',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '38',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['人數'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}人'
+                }
+            }],
+            series: [{
+                    name: '人數',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+                    var myChart = echarts.init(document.getElementById('app3'),'infographic');
+                    option = {
+            title: {
+                text: 'MAU',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '38',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['人數'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}人'
+                }
+            }],
+            series: [{
+                    name: '人數',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+
+                var myChart = echarts.init(document.getElementById('app4'),'infographic');
+                    option = {
+            title: {
+                text: '新增會員',
+                textStyle: {
+                    color: '#000',
+                    fontSize: '38',
+                    fontWeight:'bolder'
+                    
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+
+            },
+            legend: {
+                data: ['人數'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}人'
+                }
+            }],
+            series: [{
+                    name: '人數',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+                    myChart.setOption(option);
+
+
+        </script>
+    </body>
+
+</html>

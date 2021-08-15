@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-Han">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>創建新表</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/layout_nosidebar.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="assets/apps/css/dynamicAdd.css" rel="stylesheet" />
+
+
+        <link href="assets/apps/css/multi-select.css"  rel="stylesheet" type="text/css" />
+        <link href="assets/apps/css/select2.css" rel="stylesheet" type="text/css" />
+        <link href="assets/apps/css/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/apps/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
+
+
+
+        <link rel="shortcut icon" href="favicon.ico" /> 
+         <style>
+
+           .nav .open>a:hover{
+                background-color: #000;
+
+           }
+           .nav .open>a{
+                background-color: #000;
+
+           }
+             .nav>li>a:hover {
+                text-decoration: none;
+                background-color: #000;
+            }
+         </style>
+        </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="index.html">
+                         <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                         </a> 
+                </div>
+                <div class="top-menu pull-left">
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="classic-menu-dropdown">
+                            <a href="index.html" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 總覽
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="dashboard.html">共用總覽頁</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> DMP服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                               <li>
+                                    <a href="metricsall.html">受眾分析(整合分析)</a>
+                                </li>
+                                <li>
+                                    <a href="metrics.html">線上分析</a>
+                                </li>
+                                <li>
+                                    <a href="metricstag.html">線下分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 廣告服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="admanage.html">廣告管理</a>
+                                </li>
+                                <li>
+                                    <a href="adcreate.html">建立廣告</a>
+                                </li>
+                                <li>
+                                    <a href="addashboard.html">廣告成效</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 深入分析
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="explore.html">所有圖表</a>
+                                </li>
+                                <li>
+                                    <a href="chartsedit.html">建立新表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 帳號管理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="profile.html">基本設定</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Log</a>
+                                </li>
+                                <li>
+                                    <a href="administrator.html">權限管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 5 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">5 則</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">今天早上10:00</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> 會員成長超過150%. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3分鐘前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> 新的使用者登入. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">1小時間前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> 匯出會員標籤報告. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小時前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> 新的信件. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.png" />
+                                <span class="username username-hide-on-mobile"> BatUser </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> 設定 </a>
+                                </li>
+                               
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> 登出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container" style="background-color: #c8c8c8;">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">深入分析</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>建立新表</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light" style="background-color: #E4E4E4;border: 2px dashed #d5d5d5;height:auto;">
+                                <div class="portlet-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-body">
+                                        
+                                        <div class="col-sm-6">
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label">名稱</label>
+                                                <div class="col-md-11">
+                                                    <input type="text" name="chartname" class="form-control" placeholder="圖表名稱">
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label class="control-label">類型</label>
+                                                <div class="col-md-11">
+                                                    <select class="form-control" name="charttype">
+                                                        <option value="none">--選擇圖表類型--</option>
+                                                        <option value="line">折線圖</option>
+                                                        <option value="multiline">多軸折線圖</option>
+                                                        <option value="pie">圓餅圖</option>
+                                                        <option value="bar">柱狀圖</option>
+                                                        <option value="multibar">分群柱狀圖</option>
+                                                        <option value="barline">柱折混合圖</option>
+                                                        <option value="bardoubley">雙軸圖</option>
+                                                        <option value="prchart">正負柱狀圖</option>
+                                                        <option value="tree">矩形樹圖</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">日期</label>
+                                                 <div class="col-md-7">
+                                                    <div class="input-group" id="defaultrange">
+                                                        <input type="text" class="form-control">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn default date-range-toggle" type="button">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">單位</div>
+                                                <div class="col-md-3">
+                                                    <select class="form-control" name="cunit">
+                                                        <option value="day">日</option>
+                                                        <option value="month">月</option>
+                                                        <option value="year">年</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Y軸維度</label>
+                                                <div class="col-md-10">
+                                                    <select class="form-control" name="yxis">
+                                                        <option value="buyperson">購買人數</option>
+                                                        <option value="registerperson">註冊人數</option>
+                                                        <option value="amount">件數</option>
+                                                        <option value="money">金額</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                             <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <div class="panel-group accordion" id="accordion3">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title">
+                                                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1" aria-expanded="true"> 標籤篩選 </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse_3_1" class="panel-collapse collapse" aria-expanded="true" style="">
+                                                                <div class="panel-body">
+                                                                    
+                                                 <select multiple="multiple" class="multi-select" id="my_multi_select1" name="my_multi_select1[]" data-selectable-optgroup="true">
+                                                    <optgroup label="性別">
+                                                        <option value="male">男</option>
+                                                        <option value="female">女</option>
+                                                    </optgroup>
+                                                    <optgroup label="地區">
+                                                        <option value="north">北區</option>
+                                                        <option value="middle">中區</opton>
+                                                        <option value="south">南區</option>
+                                                    </optgroup>
+                                                     <optgroup label="星座">
+                                                        <option value="CUS00045">雙子座</option>
+                                                        <option value="CUS00051">射手座</option>
+                                                        <option value="CUS00040">摩羯座</option>
+                                                        <option value="CUS00049">天秤座</option>
+                                                        <option value="CUS00048">處女座</option>
+                                                        <option value="CUS00047">獅子座</option>
+                                                        <option value="CUS00046">巨蟹座</option>
+                                                        <option value="CUS00044">金牛座</option>
+                                                        <option value="CUS00043">牡羊座</option>
+                                                        <option value="CUS00042">雙魚座</option>
+                                                        <option value="CUS00041">水瓶座</option>
+                                                        <option value="CUS00050">天蠍座</option>
+                                                    </optgroup>
+                                                    <optgroup label="生日月">
+                                                        <option value="CUS00039">十二月</option>
+                                                        <option value="CUS00038">十一月</option>
+                                                        <option value="CUS00037">十月</option>
+                                                        <option value="CUS00036">九月</option>
+                                                        <option value="CUS00035">八月</option>
+                                                        <option value="CUS00034">七月</option>
+                                                        <option value="CUS00033">六月</option>
+                                                        <option value="CUS00032">五月</option>
+                                                        <option value="CUS00031">四月</option>
+                                                        <option value="CUS00030">三月</option>
+                                                        <option value="CUS00029">二月</option>
+                                                        <option value="CUS00028">一月</option>
+                                                    </optgroup>
+                                                </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title">
+                                                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_4" aria-expanded="false"> 進階篩選 </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse_3_4" class="panel-collapse collapse" aria-expanded="false">
+                                                                <div class="panel-body">
+                                                                   
+            <div class="sysright-heading" style="width:100%;float:right; ><img src="assets/images/yellow_check.png" width="8" style="margin-right: 10px;"><span>年齡</span></div>
+            <div id="years" style="width:100%;float:right;margin-top:10px;"><input type="text" id="age"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-2 pull-right">
+                                                    <button type="button" class="btn default">預覽</button>
+                                                    <button type="submit" class="btn blue">建立</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="portlet light">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <span class="caption-subject uppercase" style="font-size: 20px;">七日銷售額</span>
+                                        <span class="caption-helper">(2017/09/01~09/08)</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                        <div id="app1" style="height:250px;margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; BatMobile DMP SYSTEM.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script> 
+        <![endif]-->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepickercreate.min.js" type="text/javascript"></script>
+
+        <script src="assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+
+        <script src="assets/global/plugins/bootstrap-daterangepicker/zh-tw.js" type="text/javascript"></script>
+        
+        <!-- echarts -->
+        <script src="assets/apps/scripts/echarts.min.js" type="text/javascript"></script>
+        <script src="assets/apps/scripts/infographic.js" type="text/javascript"></script>
+    
+        <script src="assets/apps/scripts/jquery.multi-select.js"></script>
+        <script src="assets/apps/scripts/select2.min.js" type="text/javascript"></script>
+        <script src="assets/apps/scripts/jquery.quicksearch.js"></script>
+        <script src="assets/apps/scripts/ion.rangeSlider.min.js"></script>
+
+
+        
+
+        <script>
+
+        var myChart = echarts.init(document.getElementById('app1'),'infographic');
+
+        // myChart.showLoading();
+        // $.get('disk.tree.json', function (diskData) {
+        //     myChart.hideLoading();
+
+        //     function colorMappingChange(value) {
+        //         var levelOption = getLevelOption(value);
+        //         chart.setOption({
+        //             series: [{
+        //                 levels: levelOption
+        //             }]
+        //         });
+        //     }
+
+        //     var formatUtil = echarts.format;
+
+        //     function getLevelOption() {
+        //         return [
+        //             {
+        //                 itemStyle: {
+        //                     normal: {
+        //                         borderColor: '#777',
+        //                         borderWidth: 0,
+        //                         gapWidth: 1
+        //                     }
+        //                 },
+        //                 upperLabel: {
+        //                     normal: {
+        //                         show: false
+        //                     }
+        //                 }
+        //             },
+        //             {
+        //                 itemStyle: {
+        //                     normal: {
+        //                         borderColor: '#555',
+        //                         borderWidth: 5,
+        //                         gapWidth: 1
+        //                     },
+        //                     emphasis: {
+        //                         borderColor: '#ddd'
+        //                     }
+        //                 }
+        //             },
+        //             {
+        //                 colorSaturation: [0.35, 0.5],
+        //                 itemStyle: {
+        //                     normal: {
+        //                         borderWidth: 5,
+        //                         gapWidth: 1,
+        //                         borderColorSaturation: 0.6
+        //                     }
+        //                 }
+        //             }
+        //         ];
+        //     }
+
+        //     myChart.setOption(option = {
+
+        //         title: {
+        //             text: 'Disk Usage',
+        //             left: 'center'
+        //         },
+
+        //         tooltip: {
+        //             formatter: function (info) {
+        //                 var value = info.value;
+        //                 var treePathInfo = info.treePathInfo;
+        //                 var treePath = [];
+
+        //                 for (var i = 1; i < treePathInfo.length; i++) {
+        //                     treePath.push(treePathInfo[i].name);
+        //                 }
+
+        //                 return [
+        //                     '<div class="tooltip-title">' + formatUtil.encodeHTML(treePath.join('/')) + '</div>',
+        //                     'Disk Usage: ' + formatUtil.addCommas(value) + ' KB',
+        //                 ].join('');
+        //             }
+        //         },
+
+        //         series: [
+        //             {
+        //                 name:'Disk Usage',
+        //                 type:'treemap',
+        //                 visibleMin: 300,
+        //                 label: {
+        //                     show: true,
+        //                     formatter: '{b}'
+        //                 },
+        //                 upperLabel: {
+        //                     normal: {
+        //                         show: true,
+        //                         height: 30
+        //                     }
+        //                 },
+        //                 itemStyle: {
+        //                     normal: {
+        //                         borderColor: '#fff'
+        //                     }
+        //                 },
+        //                 levels: getLevelOption(),
+        //                 data: diskData
+        //             }
+        //         ]
+        //     });
+        // });
+            var myChart = echarts.init(document.getElementById('app1'),'infographic');
+            option = {
+            tooltip: {
+                trigger: 'axis',
+
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                },
+            },
+            legend: {
+                data: ['男', '女'],
+                x:'right'
+            },
+            xAxis: [{
+                type: 'category',
+                data: ['1周', '2周', '3周', '4周', '5周', '6周', '7周', '8周', '9周', '10周', '11周', '12周']
+            }],
+            yAxis: [{
+                type: 'value',
+                min: 0,
+                max: 250,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value}人'
+                }
+            }],
+            series: [{
+                    name: '男',
+                    type:'line',
+                    data: [31, 34, 48, 57, 39, 21, 13, 12, 14, 36, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }, {
+                    name: '女',
+                    type:'line',
+                    data: [40, 54, 58, 37, 31, 63, 34, 37, 48, 51, 42, 49],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    },
+                }
+
+            ]
+        };
+                    myChart.setOption(option);
+
+        </script>
+        <script>
+            
+    jQuery(document).ready(function() {
+        
+        $("#defaultrange").daterangepicker({
+                format: 'YYYY-MM-DD',
+                locale:"zh-tw",
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/1900',
+                maxDate: '12/31/2100',
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    '前7日': [moment().subtract(6, 'days'), moment()],
+                    '前30日': [moment().subtract(29, 'days'), moment()],
+                    '這一個月': [moment().startOf('month'), moment().endOf('month')],
+                    '上一個月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-default',
+                cancelClass: 'btn-white',
+                separator: ' to ',
+                locale: {
+                    applyLabel: '確認',
+                    cancelLabel: '取消',
+                    fromLabel: '從',
+                    toLabel: '到',
+                    customRangeLabel: '自訂日期',
+                    daysOfWeek:["日","一","二","三","四","五","六"],
+                    monthNames: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+                    firstDay: 1
+                }
+            }, function(t, e) {
+                $("#defaultrange input").val(t.format("MMMM D, YYYY") + " - " + e.format("MMMM D, YYYY"));
+
+                // 正常格式的日期
+                var startDate = $('#defaultrange').data('daterangepicker').startDate.format('YYYY/MM/DD');
+                var endDate = $('#defaultrange').data('daterangepicker').endDate.format('YYYY/MM/DD');
+
+
+                // 自訂格式日期
+                var customstartDate = $('#defaultrange').data('daterangepicker').startDate.format('YYYYMMDD');
+                var customendDate = $('#defaultrange').data('daterangepicker').endDate.format('YYYYMMDD');
+
+
+                var currentDate = endDate;
+                var finalday = customendDate - customstartDate ;
+                switch(finalday) {
+                    case 6:
+                        var finalday = 1;
+                        break;
+                    case 98:
+                        var finalday = 2;
+                        break;
+                    case 29:
+                        var finalday = 3;
+                        break;
+                    case 30:
+                        var finalday = 4;
+                        break;
+                    default:
+                        var finalday = 0;
+                 }
+                console.log(startDate); //開始日期
+                console.log(endDate); // 結束日期
+                console.log(finalday);//click ranges date of type num .
+            
+            })
+        });
+        </script>
+        <script>
+            $('#my_multi_select1').multiSelect({
+                    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='搜尋...'>",
+                    afterInit: function (ms) {
+                        var that = this,
+                            $selectableSearch = that.$selectableUl.prev(),
+                            $selectionSearch = that.$selectionUl.prev(),
+                            selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                            selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+
+                        that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                            .on('keydown', function (e) {
+                                if (e.which === 40) {
+                                    that.$selectableUl.focus();
+                                    return false;
+                                }
+                            });
+
+                        that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                            .on('keydown', function (e) {
+                                if (e.which == 40) {
+                                    that.$selectionUl.focus();
+                                    return false;
+                                }
+                            });
+                    },
+                    afterSelect: function () {
+                        this.qs1.cache();
+                        this.qs2.cache();
+                    },
+                    afterDeselect: function () {
+                        this.qs1.cache();
+                        this.qs2.cache();
+                    }
+
+                });
+
+                $("#age").ionRangeSlider({
+                        type: "double",
+                        min: 20, //最小值
+                        max: 85,//最大值
+                        step: 1,
+                        to:60,//初始最大值
+                        postfix: "歲",
+                        //以下四個function可用
+                        onStart: function (data) {
+                            // console.log(data);
+                        },
+                        onChange:function (data) {
+                            // console.log(data);
+                        },
+                        onFinish:function (data) {
+                            // console.log(data);
+                            console.log("from: "+data.from+" to: "+data.to);
+                           
+                        },
+                        onUpdate:function (data) {
+                            // console.log(data);
+                        }
+                    });
+
+                     $("#buyfrequency").ionRangeSlider({
+                        type: "double",
+                        values: [
+                            "一次", "二次", "三次",
+                            "四次", "五次", "六次",
+                            "七次", "八次", "九次", "十次","十次以上"
+                        ],
+                        onStart: function (data) {
+                            // console.log(data);
+                        },
+                        onChange: function (data) {
+                            // console.log(data);
+                        },
+                        onFinish: function (data) {
+                            console.log(data);
+                        },
+                        onUpdate: function (data) {
+                            // console.log(data);
+                        }
+                    });
+
+
+                  $("#birth").ionRangeSlider({
+                        type: "double",
+                        values: [
+                            "1月", "2月", "3月",
+                            "4月", "5月", "6月",
+                            "7月", "8月", "9月", "10月", "11月", "12月"
+                        ],
+                        onStart: function (data) {
+                            // console.log(data);
+                        },
+                        onChange: function (data) {
+                            // console.log(data);
+                        },
+                        onFinish: function (data) {
+                            console.log(data);
+                        },
+                        onUpdate: function (data) {
+                            // console.log(data);
+                        }
+                    });
+
+                    $("#birth1").ionRangeSlider({
+                        type: "double",
+                        values: [
+                            "1月", "2月", "3月",
+                            "4月", "5月", "6月",
+                            "7月", "8月", "9月", "10月", "11月", "12月"
+                        ],
+                        onStart: function (data) {
+                            // console.log(data);
+                        },
+                        onChange: function (data) {
+                            // console.log(data);
+                        },
+                        onFinish: function (data) {
+                            console.log(data);
+                        },
+                        onUpdate: function (data) {
+                            // console.log(data);
+                        }
+                    });
+
+                     $("#birth2").ionRangeSlider({
+                        type: "double",
+                        values: [
+                            "1月", "2月", "3月",
+                            "4月", "5月", "6月",
+                            "7月", "8月", "9月", "10月", "11月", "12月"
+                        ],
+                        onStart: function (data) {
+                            // console.log(data);
+                        },
+                        onChange: function (data) {
+                            // console.log(data);
+                        },
+                        onFinish: function (data) {
+                            console.log(data);
+                        },
+                        onUpdate: function (data) {
+                            // console.log(data);
+                        }
+                    });
+
+                     $("#birth3").ionRangeSlider({
+                        type: "double",
+                        values: [
+                            "1月", "2月", "3月",
+                            "4月", "5月", "6月",
+                            "7月", "8月", "9月", "10月", "11月", "12月"
+                        ],
+                        onStart: function (data) {
+                            // console.log(data);
+                        },
+                        onChange: function (data) {
+                            // console.log(data);
+                        },
+                        onFinish: function (data) {
+                            console.log(data);
+                        },
+                        onUpdate: function (data) {
+                            // console.log(data);
+                        }
+                    });
+        </script>
+
+    </body>
+
+</html>

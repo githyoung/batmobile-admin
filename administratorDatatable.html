@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-Han">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>權限設定</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+
+        <!-- datatable css -->
+        <link href="assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/pages/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="assets/pages/css/buttons.bootstrap.min.css">
+        <!-- <link href="assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" /> -->
+        <!-- <link href="assets/pages/css/bootstrap-table.min.css" rel="stylesheet" type="text/css" /> -->
+        <!-- <link href="assets/pages/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" /> -->
+        <!-- <link rel="stylesheet" href="assets/pages/css/jquery.dataTables.css"> -->
+        <!-- <link rel="stylesheet" href="assets/pages/css/bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="assets/pages/css/select.bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="assets/pages/css/editor.bootstrap.min.css"> -->
+        
+        <link href="assets/apps/css/dynamicAdd.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <style>
+           .nav .open>a:hover{
+                background-color: #000;
+
+           }
+           .nav .open>a{
+                background-color: #000;
+
+           }
+             .nav>li>a:hover {
+                text-decoration: none;
+                background-color: #000;
+            }
+            .tabbable-custom>.nav-tabs>li.active>a{
+
+                    background: #fff;
+            }
+            .dataTables_wrapper .dt-buttons{float:left;margin-bottom: 10px;}
+            .table.dataTable thead th, .table.dataTable tfoot th {
+                    border-top: 1px solid #ebeff2;
+                    background: #ebeff2;
+                    border-top: 2px solid #ddd;
+                }
+         </style>
+    </head>
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md">
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <a href="index.html">
+                         <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" />
+                         </a> 
+                </div>
+
+               <div class="top-menu pull-left">
+                    <ul class="nav navbar-nav pull-left">
+                        <li class="classic-menu-dropdown">
+                            <a href="index.html" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 總覽
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="dashboard.html">共用總覽頁</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> DMP服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="metricsall.html">受眾分析(整合分析)</a>
+                                </li>
+                                <li>
+                                    <a href="metrics.html">線上分析</a>
+                                </li>
+                                <li>
+                                    <a href="metricstag.html">線下分析</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 廣告服務
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="admanage.html">廣告管理</a>
+                                </li>
+                                <li>
+                                    <a href="adcreate.html">建立廣告</a>
+                                </li>
+                                <li>
+                                    <a href="addashboard.html">廣告成效</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 深入分析
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="explore.html">所有圖表</a>
+                                </li>
+                                <li>
+                                    <a href="chartsedit.html">建立新表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true" style="color:#fff"> 帳號管理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a href="administrator.html">權限管理</a>
+                                </li>
+                                <li>
+                                    <a href="group.html">群組管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 5 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">5 則</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">看全部</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">今天早上10:00</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> 會員成長超過150%. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3分鐘前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> 新的使用者登入. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">1小時間前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> 匯出會員標籤報告. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小時前</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> 新的信件. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">2 days</span>
+                                                <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                       
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="assets/layouts/layout/img/avatar3_small.png" />
+                                <span class="username username-hide-on-mobile"> BatUser </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> 設定 </a>
+                                </li>
+                               
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> 登出 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container" style="background-color: #c8c8c8;">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse" style="background-color: #c8c8c8;">
+                    <div class="tabbable-custom ">
+                        <div class="tab-content" style="background-color:#c8c8c8;">
+                            <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                                <li class="sidebar-toggler-wrapper hide">
+                                    <div class="sidebar-toggler"> </div>
+                                </li>
+                                <li class="nav-item active"><a href="administrator.html"><span class="title"><b>權限管理</b></span></a></li>
+                                <li><a href="group.html"><span class="title"><b>群組管理</b></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+
+                <div class="page-content">
+                  
+                    <div class="clearfix"></div>
+
+
+                    <!-- END DASHBOARD STATS 1-->
+                    <div class="row" style="margin-bottom: 15px;">
+                        <div class="col-sm-12">
+                            <div class="page-bar">
+                                 <ul class="page-breadcrumb">
+                                    <li>
+                                        <a href="index.html">帳號管理</a>
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <span>權限管理</span>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                 <div class="row">
+                        <div class="col-md-12">
+
+                          <!-- <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="example">
+
+                          </table> -->
+
+
+                           <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>帳號</th>
+                                <th>權限</th>
+                                <th>活動紀錄</th>
+                            </tr>
+                        </thead>
+                       <!--   <thead>
+            <tr>
+                <th>Priority</th>
+                <th>Item</th>
+                <th>Status</th>
+            </tr>
+        </thead> -->
+                       
+                    </table>
+                            <!-- <div class="portlet light portlet-fit bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-settings font-red"></i>
+                                        <span class="caption-subject font-red sbold uppercase">權限管理</span>
+                                    </div>
+                                   
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="table-toolbar">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="btn-group">
+                                                    <button id="sample_editable_1_new" class="btn green"> 新增使用者
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                                        <thead>
+                                            <tr>
+                                                <th> 姓名 </th>
+                                                <th> 帳號 </th>
+                                                <th> 權限 </th>
+                                                <th> 活動紀錄 </th>
+                                                <th> 編輯 </th>
+                                                <th> 刪除 </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> 蝙蝠移動 </td>
+                                                <td> bat </td>
+                                                <td class="center"> 廣告 </td>
+                                                <td> 查看 </td>
+                                                <td>
+                                                    <a class="edit" href="javascript:;"> 編輯 </a>
+                                                </td>
+                                                <td>
+                                                    <a class="delete" href="javascript:;"> 刪除 </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 愛德恩 </td>
+                                                <td> Edwin </td>
+                                                <td class="center"> Dmp-線上資料 </td>
+                                                <td> 查看 </td>
+                                                <td>
+                                                    <a class="edit" href="javascript:;"> 編輯 </a>
+                                                </td>
+                                                <td>
+                                                    <a class="delete" href="javascript:;"> 刪除 </a>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td> 燦坤 </td>
+                                                <td> tkec </td>
+                                                <td class="center"> dmp,廣告 </td>
+                                                <td> 查看 </td>
+                                                <td>
+                                                    <a class="edit" href="javascript:;"> 編輯 </a>
+                                                </td>
+                                                <td>
+                                                    <a class="delete" href="javascript:;"> 刪除 </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                  <!-- end row -->
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; BatMobile DMP SYSTEM.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+        <script src="assets/global/plugins/respond.min.js"></script>
+        <script src="assets/global/plugins/excanvas.min.js"></script> 
+        <![endif]-->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+       
+        <script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+       
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+
+        <!-- template datatable -->
+        <!-- <script src="assets/global/scripts/datatable.js" type="text/javascript"></script> -->
+        <!-- <script src="assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script> -->
+        <!-- <script src="assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script> -->
+        <!-- <script src="assets/pages/scripts/table-datatables-editable.min.js" type="text/javascript"></script> -->
+
+
+        <!-- js datatable  -->
+        <script src="assets/pages/scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dataTables.buttons.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dataTables.select.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dataTables.responsive.min.js" type="text/javascript"></script>
+        <!-- <script src="assets/pages/scripts/dataTables.altEditor.free.js" type="text/javascript"></script> -->
+        <script src="assets/pages/scripts/buttons.bootstrap2.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dataTables.bootstrap2.min.js" type="text/javascript"></script>
+        <script src="assets/pages/scripts/dataTables.editor.min.js" type="text/javascript"></script>
+
+
+         <script src="assets/pages/scripts/editor.bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- <script src="assets/pages/scripts/dataTables.altEditor.free.js" type="text/javascript"></script> -->
+
+
+        <script>
+            // $(document).ready(function() {
+            //   var dataSet = [
+            //     ["Tiger Nixon", "System Architect", "Edinburgh", "查看"],
+            //     ["Garrett Winters", "Accountant", "Tokyo", "查看"],
+            //     ["Ashton Cox", "Junior Technical Author", "San Francisco", "查看"],
+            //     ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "查看"],
+            //     ["Airi Satou", "Accountant", "Tokyo", "查看"],
+            //     ["Brielle Williamson", "Integration Specialist", "New York", "查看"],
+            //     ["Herrod Chandler", "Sales Assistant", "San Francisco", "查看"],
+            //     ["Rhona Davidson", "Integration Specialist", "Tokyo", "查看"],
+            //     ["Colleen Hurst", "Javascript Developer", "San Francisco", "查看"],
+            //     ["Sonya Frost", "Software Engineer", "Edinburgh", "查看"],
+            //     ["Jena Gaines", "Office Manager", "London", "查看"],
+            //     ["Quinn Flynn", "Support Lead", "Edinburgh", "查看"],
+            //     ["Charde Marshall", "Regional Director", "San Francisco", "查看"],
+            //     ["Haley Kennedy", "Senior Marketing Designer", "London", "查看"],
+            //     ["Tatyana Fitzpatrick", "Regional Director", "London", "查看"],
+            //     ["Michael Silva", "Marketing Designer", "London", "查看"],
+            //     ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "查看"],
+            //     ["Gloria Little", "Systems Administrator", "New York", "查看"],
+            //     ["Bradley Greer", "Software Engineer", "London", "查看"],
+            //     ["Dai Rios", "Personnel Lead", "Edinburgh", "查看"],
+            //     ["Jenette Caldwell", "Development Lead", "New York", "查看"],
+            //     ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "查看"],
+            //     ["Caesar Vance", "Pre-Sales Support", "New York", "查看"]
+            //   ];
+
+            //   var columnDefs = [{
+            //     title: "姓名"
+            //   }, {
+            //     title: "帳號"
+            //   }, {
+            //     title: "權限"
+            //   }, {
+            //     title: "活動紀錄",
+            //     render: function (data, type, row, meta) {
+            //                     return '<a href="view/log?' + data + '">' + data + '</a>';
+            //                 }
+            //   }];
+
+            //   var myTable;
+
+            //   myTable = $('#example').DataTable({
+            //     "sPaginationType": "full_numbers",
+            //     data: dataSet,
+            //     columns: columnDefs,
+            //         dom: 'Bfrtip',        // Needs button container
+            //           select: 'single',
+            //           responsive: true,
+            //           altEditor: true,     // Enable altEditor
+            //           buttons: [{
+            //             text: '新增',
+            //             name: 'add'        // do not change name
+            //           },
+            //           {
+            //             extend: 'selected', // Bind to Selected row
+            //             text: '編輯',
+            //             name: 'edit'        // do not change name
+            //           },
+            //           {
+            //             extend: 'selected', // Bind to Selected row
+            //             text: '刪除',
+            //             name: 'delete'      // do not change name
+            //          }]
+            //   });
+
+
+            // });
+function getStateList() {
+var aStateList = new Array();
+
+aStateList[0] = { "label": "Type1", "value": "1" };
+aStateList[1] = { "label": "Type2", "value": "2" };
+aStateList[2] = { "label": "Type3", "value": "3" };
+aStateList[3] = { "label": "Type4", "value": "4" };
+
+return aStateList;
+}
+
+            $(document).ready(function() {
+                editor = new $.fn.dataTable.Editor( {
+                    ajax: "data.txt",
+                    table: "#example",
+                    fields: [ {
+                            label: "姓名",
+                            name:  "item"
+                        }, {
+                            label: "帳號:",
+                            name:  "ac",
+                        }, {
+                            label: "權限:",
+                            name:  "priority",
+                            type:  "select",
+                            "ipOpts": getStateList()
+                            // options: [
+                            //     { label: "1 (highest)", value: "1" },
+                            //     { label: "2",           value: "2" },
+                            //     { label: "3",           value: "3" },
+                            //     { label: "4",           value: "4" },
+                            //     { label: "5 (lowest)",  value: "5" }
+                            // ]
+                        },
+                        {
+                            label: "活動紀錄",
+                            name: "activity"
+                        }
+                    ]
+                } );
+
+                 
+                    editor.on('initEdit', function() {
+                        editor.show();
+                        editor.hide('activity');
+                    });
+
+             
+                $('#example').DataTable( {
+                    dom: "Bfrtip",
+                    ajax: "data.txt",
+                    columns: [
+                        { data: "item", className: "center" },
+                        { data: "ac" },
+                        { data: "priority" },
+                        { data: "activity",
+                            "render": function(data, type, full, meta) {
+                                return '<a href="view?emp_id=' + data + '">"' + data + '"</a>';
+                                 editor.hide('position');
+                            }
+                         }
+                    ],
+                    select: true,
+                    buttons: [
+                        { extend: "create", editor: editor },
+                        { extend: "edit",   editor: editor },
+                        { extend: "remove", editor: editor }
+                    ]
+                } );
+            } );
+
+        </script>
+        
+       
+
+        
+
+    </body>
+
+</html>
